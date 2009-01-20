@@ -1,0 +1,1287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-us" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us">
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+		<meta content="© 1994-2006, W3C (MIT,ERCIM,Keio)" name="copyright"/>
+		<link href="../../../People/Ivan/CorePresentations/StyleSheets/notebook/notebook.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<style type="text/css">
+            .greenish { color: green; fill:green !important; }        
+            .reddish { color: red }
+			 text.centre,tspan.centre {text-anchor:middle; stroke:none; fill:green}
+			 .wrong { text-decoration: line-through; background:red }
+			 blockquote ul li { font-family:sans-serif }
+        </style>
+		<style type="text/css">.withSVG { display: none }</style>
+		<link href="../../../Talks/Tools/Slidy/print.css" media="print" rel="stylesheet" type="text/css"/>
+		<link href="../../../People/Ivan/CorePresentations/StyleSheets/SlidyPrintAddon.css" media="print" rel="stylesheet" type="text/css"/>
+		<script src="../../../Talks/Tools/Slidy/slidy.js" type="text/javascript"></script>
+		<link href="http://purl.org/dc" rel="schema.dc"/>
+		<meta content="Questions (and Answers) on the Semantic Web" name="dc.title"/>
+		<meta content="Ivan Herman, W3C" name="dc.author"/>
+		<meta content="Ivan Herman, W3C" name="dc.creator"/>
+		<meta content="2006-09-20" name="dc.date"/>
+		<meta content="W3C - World Wide Web Consortium" name="dc.publisher"/>
+		<meta content="http://www.w3.org/Consortium/Legal/copyright-documents" name="dc.rights"/>
+		<link href="http://www.w3.org/People/Ivan/" rel="Author"/>
+		<title>Questions (and Answers) on the Semantic Web</title>
+	</head>
+	<body>
+		<div class="background">
+			<div class="header"></div>
+			<div class="footer">
+				<a href="http://www.w3.org/">
+					<img alt="W3C logo" src="../../../People/Ivan/CorePresentations/StyleSheets/w3c-logo-blue.png" id="w3c-logo-fallback" />
+				</a> Questions (and Answers) on the Semantic Web</div>
+		</div>
+		<div class="slide cover">
+			<img src="../../../Talks/Tools/Slidy/keys.jpg" alt="Cover page images (keys)" class="cover"/>
+			<br clear="all"/>
+			<h1>Questions (and Answers) on the Semantic Web</h1>
+			<p>Oslo, Norway, 2006-09-20</p>
+			
+			<p>
+				<a href="http://www.w3.org/People/Ivan/">Ivan Herman, W3C</a>
+			</p>
+		</div>
+				
+		<div class="slide">
+			<h1>We all know that, right?</h1>
+			
+			<ul>
+				<li>The Semantic Web Artificial Intelligence on the Web</li>
+				<li>It relies on centrally controlled ontologies for “meaning” <ul><li>as opposed to
+				a democratic, bottom–up control of terms</li></ul></li>
+				<li>One has to add metadata to all Web pages, convert all relational databases, and XML data to
+				use the Semantic Web</li>
+				<li>It is just an ugly application of XML</li>
+				<li>One has to learn formal logic, knowledge representation techniques, description logic, etc
+				</li>
+				<li>It is, essentially, an academic project, of no interest for industry</li>
+				<li>…</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h1>WRONG!!!!</h1>
+			<ul>
+				<li><span class="wrong">The Semantic Web Artificial Intelligence on the Web</span></li>
+				<li><span class="wrong">It relies on centrally controlled ontologies for “meaning”</span><ul><li><span class="wrong">as opposed to
+				a democratic, bottom–up control of terms</span></li></ul></li>
+				<li><span class="wrong">One has to add metadata to all Web pages, convert all relational databases, and XML data to
+				use the Semantic Web</span></li>
+				<li><span class="wrong">It is just an ugly application of XML</span></li>
+				<li><span class="wrong">One has to learn formal logic, knowledge representation techniques, description logic, etc</span>
+				</li>
+				<li><span class="wrong">It is, essentially, an academic project, of no interest for industry</span></li>
+				<li><span class="wrong">…</span></li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h1>Goal of this presentation…</h1>
+			<ul>
+				<li>There are lots of myths around the Semantic Web</li>
+				<li>This presentation will try to de-mystify at least some of those…</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1> </h1>
+			<h2>Is the Semantic Web AI on the Web?</h2>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>No!</h1>
+			<div style="text-align: center;">
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/hype.svg" width="90%" height="72%"
+					title="Picture of a hype article with a text on it saying 'Beware of the Hype'">
+				<img alt="Picture of a hype article with a text on it saying 'Beware of the Hype'"
+						src="../../../People/Ivan/CorePresentations/figures/hype.png" />
+			</object>
+			</div>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>So what <em>is</em> the Semantic Web?</h1>
+			<ul>
+			    <li>Humans can easily “connect the dots” when browsing the Web…
+					<ul>
+						<li>you disregard advertisements</li>
+						<li>you “know” (from the context) that this link is interesting and goes to my CV; whereas the that one is without interest</li>
+						<li>etc.</li>
+					</ul>
+				</li>
+				<li>… but machines can’t!</li>
+				<li>The goal is to have a <em>Web of Data</em> to ensure smooth integration with data, too</li>
+				<li>Let us see just some application examples…</li>
+			</ul>
+		</div>
+		
+		<!-- ========= new slide ========== -->
+		
+		<div  class="slide">
+			<h1>Example: Automatic Airline Reservation</h1>
+			<ul>
+			  <li>Your automatic airline reservation
+				<ul>
+				  <li>knows about your preferences</li>
+				  <li>builds up knowledge base using your past</li>
+				  <li>can <em>combine</em> the local knowledge with remote services:
+					<ul>
+					  <li>airline preferences</li>
+					  <li>dietary requirements</li>
+					  <li>calendaring</li>
+					  <li>etc</li>
+					</ul>
+				  </li>
+				</ul>
+			  </li>
+			  <li>It communicates with <em>remote</em> information (i.e., on the
+			  Web!)</li>
+			  <li class="noBullet">(M. Dertouzos: The Unfinished Revolution)</li>
+			</ul>
+		</div>
+		<!-- ========= new slide ========== -->
+		
+		<div class="slide">
+			<h1>Example: data(base) integration</h1>
+			<ul>
+			  <li>Databases are very different in structure, in content</li>
+			  <li>Lots of applications require managing <em>several</em> databases
+				<ul>
+				  <li>after company mergers</li>
+				  <li>combination of administrative data for e-Government</li>
+				  <li>biochemical, genetic, pharmaceutical research</li>
+				  <li>etc.</li>
+				</ul>
+			  </li>
+			  <li>Most of these data are now on the Web (though not necessarily public yet)</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h1>Example: data integration in life sciences</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/hclsIntegration.svg" width="90%" height="72%"
+					title="Left side: data silos, each its own representation on a screen, with scientist interpreting; right side: same silos, converted to rdf and co, scientist doing data right away.">
+				<img alt="Left side: data silos, each its own representation on a screen, with scientist interpreting; right side: same silos, converted to rdf and co, scientist doing data right away."
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/hclsIntegration.png" />
+			</object>
+		</div>	
+		
+		<div class="slide">
+			<h1>And the problem <em>is</em> real</h1>
+			<div class="center">
+			    <img src="../../../People/Ivan/CorePresentations/figures/DataIntegration/NeuroDatabases.png" alt="screen dump of three different Life Science databases with mutually different interfaces" />
+			</div>
+		</div>
+		
+		<div class="slide">
+			<h1>So what <em>is</em> the Semantic Web?</h1>
+			<p style="font-size:120%; font-weight:bold"><em>The Semantic Web is… the Web of Data</em></p>
+			<ul>
+				<li>It allows machines to “connect the dots”</li>
+				<li>It provides a common framework to share  data on the Web across application boundaries</li>
+			</ul>
+		</div>
+		
+		<div class="slide">
+			<h1>And what is the relationship to AI?</h1>
+			
+			<ul>
+				<li><em>Some</em> technologies in the Semantic Web has benefited from AI research and development (see later)</li>
+				<li>Semantic Web has also brought some new concerns, problems, use cases to AI</li>
+				<li>But AI has many many different problems that are not related to the Web at all (image understanding is a good example)</li>
+			</ul>		
+		</div>
+		
+		<div class="slide">
+			<h1>A possible comparison</h1>
+			<dl>
+				<dt>Smarter machines</dt>
+				<dd>
+					<ul><li>teach computers to infer the meaning of Web data
+						<ul><li>natural language, image recognition, etc.</li></ul>
+						</li>
+						<li>…this is the Artificial Intelligence approach</li>
+					</ul>
+				</dd>
+				<dt>Smarter data</dt>
+				<dd>
+					<ul>
+						<li>Make data easier for machines to find, access and process
+							<ul>
+								<li>express data and meaning in standard machine-readable format</li>
+								<li>support decentralized definition and management, across the network</li>
+							</ul>
+						</li>
+						<li>…this is the Semantic Web approach</li>
+					</ul>
+				</dd>
+			</dl>			
+		</div>
+		
+		
+		<div class="slide">
+			<h1> </h1>
+			<h2>All right, but what is RDF then?</h2>
+		</div>
+		
+		<div class="slide">
+			<h1>RDF </h1>
+			<ul>
+				<li>For all applications listed above the issues are <em>to create relations among resources on the Web</em> and to <em>interchange those data</em></li>
+				<li>Pretty much like (hyper)links on the traditional web, except that:
+					<ul>
+						<li>there is no notion of “current” document; ie, relationship is between <em>any</em> two resources</li>
+						<li>a relationship must have a name: a link to my CV should be differentiated from a link to my Calendar</li>
+						<li>there is no attached user-interface action like for a hyperlink</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>RDF (cont.)</h1>
+			<ul>
+				<li><em>RDF is a model for such relationships and interchange</em> 
+					<ul><li>to be a bit more techie: it is a model of <code>(s p o)</code> triplets with <code>p</code> naming the relationship
+					between <code>s</code> and <code>o</code></li></ul>
+				</li>
+				<li>URI-s are used as universal <em>naming</em> tools, including for properties (after all, “U” stands for “Universal”…)</li>
+				<li>That is it (essentially)! Nothing very complex…</li>	
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>But isn’t RDF simply an (ugly) XML application?</h2>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>RDF is a graph!</h1>
+			<ul>
+				<li>As we already said: RDF is a set of relationships</li>
+				<li>An <code>(s,p,o)</code> triple can be viewed as a labeled edge in a graph
+						<ul><li><em>i.e., a set of RDF statements is a directed, labeled graph</em>
+							<ul>
+								<li>the nodes represent the resources that are bound</li>
+								<li>the labeled edges are the relationships with their names</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>This set must be serialized for machines; this can be done into XML (using RDF/XML), or to other formats 
+				(Turtle, N-Triples, TriX,&nbsp;…)</li>
+				<li>Think in terms of graphs, the rest is syntactic sugar!</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+        <div class='slide'>
+            <h1>A Simple RDF Example</h1>
+            <div style='text-align:center'>
+                <div style='text-align:center'>
+                    <div style='text-align:center'>
+                        <object width='90%' height='30.94%' type='image/svg+xml' data='../../../People/Ivan/CorePresentations/figures/SimpleExample.svg' title='A Simple RDF Graph with full URI-s'>
+                            <img src='../../../People/Ivan/CorePresentations/figures/SimpleExample.png' alt='A Simple RDF Graph with full URI-s'/>
+                        </object>
+                    </div>
+                </div>
+            </div>
+            <div class='preDiv'>
+                <div class='preDiv'>
+                    <div class='preDiv'>
+                        <pre class='preFirst preLast preFirst preLast preFirst preLast'>&lt;rdf:Description rdf:about="http://www.ivan-herman.net">
+    &lt;foaf:name>Ivan&lt;/foaf:name>
+    &lt;abc:myCalendar rdf:resource="http://…/myCalendar"/>
+    &lt;foaf:surname>Herman&lt;/foaf:surname>
+&lt;/rdf:Description></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Yes, RDF/XML has its Problems</h1>
+			<ul>
+				<li>RDF/XML was developed in the “prehistory” of XML
+					<ul><li>e.g., even namespaces did not exist!</li></ul>
+				</li>
+				<li>Coordination was not perfect, leading to problems
+					<ul><li>the syntax cannot be checked with XML DTD-s</li>
+						<li>XML Schemas are also a problem</li>
+						<li>encoding is verbose and complex (simplifications lead to confusions…)</li>
+					</ul>
+				</li>
+				<li class="noBullet">but there is too much legacy code to change it</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Use, e.g., Turtle if you prefer…</h1>
+			<div class="preDiv">
+				<pre class="preFirst">&lt;http://www.ivan-herman.net&gt;</pre>
+				<pre class="preMiddle">  foaf:firstName "Ivan";</pre>
+				<pre class="preMiddle">  abc:myCalendar &lt;http://.../myCalendar&gt;;</pre>
+				<pre class="preLast">  foaf:surname "Herman".</pre>
+			</div>
+			<ul>
+				<li>Again: these are all just syntactic sugar!</li>
+				<li>RDF environments often understand several serialization syntaxes</li>
+				<li>In some cases, authoring tools hide the details anyway!</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1> </h1>
+			<h2>But what has RDF to do with data integration?</h2>
+		</div>
+		<div class="slide">
+			<h1>Consider this (simplified) bookstore data set</h1>
+			<table width="100%" border="1">
+				<tr>
+					<th>ID</th>
+					<th>Author</th>
+					<th>Title</th>
+					<th>Publisher</th>
+					<th>Year</th>
+				</tr>
+				<tr>
+					<td>ISBN 0-00-651409-X</td>
+					<td>id_xyz</td>
+					<td>The Glass Palace</td>
+					<td>id_qpr</td>
+					<td>2000</td>
+				</tr>
+			</table>
+			<p>&nbsp;</p>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Home page</th>
+				</tr>
+				<tr>
+					<td>id_xyz</td>
+					<td>Amitav Ghosh</td>
+					<td>http://www.amitavghosh.com/</td>
+				</tr>
+			
+			</table>
+			<p>&nbsp;</p>
+			<table border="1">
+				<tr>
+					<th>ID</th>
+					<th>Publisher Name</th>
+					<th>City</th>
+				</tr>
+				<tr>
+					<td>id_qpr</td>
+					<td>Harper Collins</td>
+					<td>London</td>
+				</tr>
+			</table>		
+		</div>
+		
+		<div class="slide">
+			<h1>Export your data as a set of relations…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/englishData.svg" width="90%" height="75%"
+					title="The previous table in an RDF format">
+				<img alt="The previous table in an RDF format"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/englishData.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>Add the data from another publisher…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergeStart.svg" width="90%" height="75%"
+					title="The French and English data side by side">
+				<img alt="The French and English data side by side"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergeStart.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>Start merging…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergeStartPlusID.svg" width="90%" height="75%"
+					title="The merged data with nodes with identical URI-s pointed out">
+				<img alt="The merged data with nodes with identical URI-s pointed out"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergeStartPlusID.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>Simple integration…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/merged.svg" width="90%" height="75%"
+					title="The merged data with one of the nodes merged with common URI">
+				<img alt="The merged data with one of the nodes merged with common URI"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/merged.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>Note the role of URI-s!</h1>
+			<ul>
+				<li>The URI-s made the merge possible</li>
+				<li>URI-s ground RDF into the Web</li>
+				<li>URI-s make this the Semantic <em>Web</em></li>
+			</ul>
+		</div>
+		
+		
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>So what is then the role of ontologies and/or rules?</h2>
+		</div>
+		<div class="slide">
+			<h1>A possible short answer</h1>
+			<ul>	
+				<li><em>Ontologies/rules are there to help integration</em></li>
+				<li>Let us come back to our example…</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>This is where we are…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/merged.svg" width="90%" height="75%"
+					title="The merged data with one of the nodes merged with common URI">
+				<img alt="The merged data with one of the nodes merged with common URI"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/merged.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>Our merge is not complete yet…</h1>
+			<ul>
+				<li>We “feel” that <code>a:author</code> and <code>f:auteur</code> should be the same</li>
+				<li>But an automatic merge doest not know that!</li>
+				<li>Let us add some extra information to the merged data:
+					<ul>
+						<li><code>a:author</code> same as <code>f:auteur</code></li>
+						<li>both identify a “Person”:
+							<ul>
+								<li>a term that a community has already defined (part of the “FOAF” terminology)</li>
+								<li>a “Person” is uniquely identified by his/her name and, say, homepage</li>
+								<li>it can be used as a “category” for certain type of resources</li>
+								<li>we can also identify, say, <code>a:name</code> with <code>foaf:name</code></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		
+		</div>
+		<div class="slide">
+			<h1>Better merge: richer queries are possible!</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedRevisited.svg" width="90%" height="75%"
+					title="The merged data with extra nodes identified as a result of identifying same as properties">
+				<img alt="The merged data with extra nodes identified as a result of identifying same as properties"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedRevisited.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>What we did: we used ontologies…</h1>
+			<ul>
+				<li>We said:</li>
+			</ul>
+					<blockquote><ul>
+						<li><code>a:author</code> same as <code>f:auteur</code></li>
+						<li>both identify a “Person”:
+							<ul>
+								<li>a term that a community has already defined</li>
+								<li>a “Person” is uniquely identified by his/her name and, say, homepage</li>
+								<li>it can be used as a “category” for certain type of resources</li>
+								<li>we can also identify, say, <code>a:name</code> with <code>foaf:name</code></li>
+							</ul>
+						</li>
+					</ul>
+					</blockquote>
+				
+			<ul>
+				<li>These statements can be described in an ontology (or, alternatively, with rules)</li>
+				<li>The ontology/rule serves as some sort of a “glue”</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>And then the merge may go on…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia.svg" width="90%" height="75%"
+					title="The merged data with a reference to a Wikipedia entry on the author ">
+				<img alt="The merged data with a reference to a Wikipedia entry on the author"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>…and on…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia-2.svg" width="90%" height="75%"
+					title="The merged data with a reference to a Wikipedia entry on the author plus other books he wrote ">
+				<img alt="The merged data with a reference to a Wikipedia entry on the author plus other books he wrote"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia-2.png" />
+			</object>
+		</div>
+		<div class="slide">
+			<h1>…and on…</h1>
+			<object type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia-3.svg" width="90%" height="75%"
+					title="The merged data with a reference to a Wikipedia entry on the author plus other books he wrote plus a reference to Calcutta referreing to the google map entry ">
+				<img alt="The merged data with a reference to a Wikipedia entry on the author plus other books he wrote plus a reference to Calcutta refereeing to the google map entry"
+						src="../../../People/Ivan/CorePresentations/figures/DataIntegration/mergedWithWikipedia-3.png" />
+			</object>
+		</div>
+				
+		<div class="slide">
+			<h1>Is that surprising?</h1>
+			<ul>
+				<li>Maybe but, in fact, no…</li>
+				<li>What happened via automatic means is done all the time by the (human) users of the Web!</li>
+				<li>The difference: a bit of extra rigor (eg, <em>naming</em> the relationships), 
+				extra information (eg, identifying relationships) and machines could do this, too</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>A very important issue: “schema independence”</h1>
+			<ul>
+				<li>The queries (ie, the application) sees the RDF data only (with references to “real” data)</li>
+				<li>If the structure (“schema”) of the database changes, only the mapping to RDF has to be changed
+					<ul>
+						<li>this is a very <em>local</em> change</li>
+					</ul>
+				</li>
+				<li>Ie, the RDF layer is very robust vis-a-vis schema evolution (not only to schema differences)</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>You remember this statement?</h1>
+			<blockquote>		
+				<ul>				
+						<li>It relies on giant, centrally controlled ontologies for “meaning”</li>
+				</ul>			
+			</blockquote>
+			<ul>
+				<li>Ontologies are usually developed by communities and they are to be <em>shared</em> 
+					<ul><li>in fact, in our example, we used an ontology called “FOAF”</li></ul>
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>And this?</h1>
+			<blockquote>		
+				<ul>				
+						<li>One has to learn formal logic, knowledge representation techniques, description logic, etc,
+						to understand the Semantic Web and be able to use it</li>
+				</ul>			
+			</blockquote>
+			<ul>
+				<li>This “glue” does <em>not</em> have to be complex, it may be of a few lines only
+					<ul><li>“a little semantics can take you far…”</li></ul>		
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>So what does “inference” means on the Semantic Web? How do you “deduce” things?</h2>
+		</div>
+		<div class="slide">
+			<h1>Remember the “same as”?</h1>
+			<ul>
+				<li>We said: <code>a:name</code> same as <code>foaf:name</code></li>
+				<li>What this meant, in ontology terms:
+					<ul>
+						<li>if <code>(P&nbsp;a:name&nbsp;L)</code> is present, then  <code>(P&nbsp;foaf:name&nbsp;L)</code> should be present, too (and vice versa)</li>
+					</ul>
+				</li>
+				<li>But what this also means is that:
+					<ul>
+						<li>whereas <code>(P&nbsp;a:name&nbsp;L)</code> is in the <em>original</em> data</li>
+						<li><code>(P&nbsp;foaf:name&nbsp;L)</code> is an <em>added</em> (or “deduced”) relationship by virtue 
+						of the ontology we used</li>
+					
+					</ul>
+				</li>
+				<li>Ie: <em>“inference” means discovery of new relationships!</em></li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>Tradeoffs</h1>
+			
+			<ul>
+				<li>What can be inferred depends on the level of additional knowledge (ie, “glue”) one adds to the original data</li>
+				<li>More complex ontologies: more inference possibilities, but more complex reasoning procedures</li>
+				<li>At present, W3C has defined a set of ontology languages (and is working on rules)</li>
+				<li>An application may choose the complexity it wants</li>
+			</ul>
+            <div style='text-align:center'>
+                <object width='90%' height='26.25%' data='../../../People/Ivan/CorePresentations/figures/onionFull.svg' class='svg' type='image/svg+xml'>
+                    <img src='../../../People/Ivan/CorePresentations/figures/onionFull.png' alt='concentric arcs with RDF, RDFS, OWL Lite, DL, and Full'/>
+                </object>
+            </div>
+		</div>
+		<div class="slide">
+			<h1> </h1>
+		    <h2>“One has to learn formal logic, knowledge representation techniques, description logic, etc”</h2>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Not really…</h1>
+			<ul>
+				<li>Yes, the detailed semantics of RDFS, OWL Lite, etc, are based on knowledge representation algorithms
+					<ul>
+						<li>OWL-DL stands for “OWL Description Logic”; it is an embodiment of <em>a</em> Description Logic</li>
+					</ul>
+				</li>
+				<li class="noBullet">…but most users just have to <em>use</em> these</li>
+				<li>It is just like SQL: the formal semantics is <em>very</em> complex, but 95% of the SQL users have never even looked
+				at it!</li>
+				<li><em>Developing</em> and ontology may require more knowledge, but that is for a small percentage
+				of users (and there are authoring tools to hide the details)</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>Where do the data and ontologies come from?</h2>
+			<p>(Should we really expect the author to type in all this data?)</p>
+		</div>
+		
+		<div class="slide">
+				<h1>Pure RDF data: not always a solution…</h1>
+				<ul>
+					<li>Creating large scale RDF data with an editor is possible, but does not really scale…
+						<ul>
+							<li>although it may be o.k. for small things like the “glue” in our example</li>
+						</ul>
+					</li>
+					<li>Even if it is around: adding RDF to, say, XHTML, is not always easy
+						<ul>
+							<li>there are number of disagreeable technical problems with, eg, validation</li>
+							<li>the only “clean” approach today is to link it via a <code>meta</code> header element</li>
+						</ul>
+					</li>
+				</ul>
+		</div>
+		<div class="slide">
+			<h1>Data may be around already…</h1>
+			<ul>
+				<li>Part of the (meta)data information is present in tools … but thrown away at output
+					<ul>
+						<li>e.g., a business chart can be generated by a tool…</li>
+						<li class="noBullet">…it “knows” the structure, the
+							classification, etc. of the chart, but, usually, this information is lost</li>
+					</ul>
+				</li>
+				<li class="noBullet">storing it in web data would be easy!</li>
+				<li>“SW-aware” tools are around (even if you do not know it…), though more would be good:
+					<ul><li>Photoshop CS stores metadata in RDF in, say, jpg files (referred to 
+					as <a href="http://www.adobe.com/products/xmp/main.html">XMP</a>)
+						</li>
+						<li>
+							<a href="http://web.resource.org/rss/1.0/spec">RSS&nbsp;1.0</a> feeds are
+							generated by (almost) all blogging systems (a <em>huge</em> amount of RDF data!)</li>
+						<li>…</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>Data may be extracted (a.k.a. “scraped”)</h1>
+			<ul>
+				<li>Different tools, services, etc, come around every day:
+					<ul>
+						<li>get RDF data associated with images, for example:
+						   <ul>
+						   	<li>service to <a href="http://purl.org/net/kanzaki/flickr2rdf">get RDF from flickr images</a> 
+							(see <a href="http://www.kanzaki.com/works/2005/imgdsc/flickr2rdf?u=http%3A%2F%2Fwww.flickr.com%2Fphotos%2Fivan_herman%2F183837377%2F">example</a>)</li>
+						   	<li>service to <a href="http://www.ivan-herman.net/WebLog/WorkRelated/SemanticWeb/xmpextract.html">get RDF from XMP</a> 
+							(see <a href="http://www.w3.org/2004/07/viewAsXml?uri=http%3A%2F%2Fwww.ivan-herman.net%2Fcgi-bin%2Fxmp.py%3Furi%3Dhttp%3A%2F%2Fwww.ivan-herman.net%2FPhotos%2Fxmptest.jpg">example</a>)</li>
+						   
+						   </ul>
+						</li>
+						<li>XSLT scripts to retrieve microformat based information from XHTML files</li>
+						<li>scripts to convert spreadsheets to RDF</li>
+						<li>etc</li>
+					</ul>				
+				</li>
+				<li>Most of these tools are still individual “hacks”, but show a general tendency</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Formalizing the scraper approach: GRDDL</h1>
+			<ul>
+				<li>
+					<a href="http://www.w3.org/TeamSubmission/grddl/">GRDDL</a>
+					<em>formalizes</em> the scraper approach. For example:</li>
+			</ul>
+			<div class="preDiv">
+				<div class="preDiv">
+					<pre class="preFirst preLast preFirst preLast">&lt;html xmlns="http://www.w3.org/1999/">
+  &lt;head profile="http://www.w3.org/2003/g/data-view">
+    &lt;title>Some Document&lt;/title>
+    &lt;link rel="transformation" href="http:…/dc-extract.xsl"/>
+    &lt;meta name="DC.Subject" content="Some subject"/>      
+    ...
+  &lt;/head>
+  ...
+  &lt;span class="date">2006-01-02&lt;/span>
+  ...
+&lt;/html></pre>
+				</div>
+			</div>
+			<ul>
+				<li class="noBullet">yields, by running the file through
+    <code>dc-extract.xsl</code>
+				</li>
+			</ul>
+			<div class="preDiv">
+				<div class="preDiv">
+					<pre class="preFirst preLast preFirst preLast">&lt;rdf:Description rdf:about="…">
+  &lt;dc:subject>Some subject&lt;/dc:subject>
+  &lt;dc:date>2006-01-02&lt;/dc:date>
+&lt;/rdf:Description></pre>
+				</div>
+			</div>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>GRDDL (cont)</h1>
+			<ul>
+				<li>Somebody has to provide <code>dc-extract.xsl</code> and use its conventions (making use of the corresponding meta-s, class id-s, etc…)</li>
+				<li>… but, by using the <code>profile</code> attribute, a client is instructed to find and run the transformation processor automatically</li>
+				<li>A “bridge” to “microformats”</li>
+				<li>A <a href="http://www.w3.org/2001/sw/grddl-wg/">W3C Working Group</a> has just started, with a recommendation planned in the 1st Quarter of 2007</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Another Future Solution: RDFa</h1>
+			<ul>
+				<li>RDFa (formerly known as RDF/A) extends XHTML by:
+					<ul><li>extending the <code>link</code> and <code>meta</code> elements (e.g., meta elements may 
+						have children, thereby adding more complex data; usable throughout the body, too)</li>
+						<li>defining general attributes to add metadata to <em>any</em>  elements (a bit like the <code>class</code> in 
+						microformats, but via dedicated properties)</li>
+					</ul>
+				</li>
+				<li>It is very similar to microformats, but with more rigor: 
+					<ul>
+						<li>it is a general framework (instead of an “agreement” on the meaning
+				of, say, a <code>class</code> attribute value)</li>
+						<li>terminologies can be mixed more easily</li>
+					</ul>
+				</li>
+				<li>The <a href="http://www.w3.org/2006/07/SWD/">W3C Working Group on SW Deployment</a> has this on its charter</li>
+			</ul>
+		</div>
+		
+		<div id="gen3-1" class="slide">
+			<h1>RDFa example</h1>
+			<ul>
+			  <li>For example</li>
+			</ul>
+
+<div class="preDiv">
+<pre class="preFirst preLast">&lt;div about="http://uri.to.newsitem"&gt;
+  &lt;span property="dc:date"&gt;March 23, 2004&lt;/span&gt;
+  &lt;span property="dc:title"&gt;Rollers hit casino for £1.3m&lt;/span&gt;
+  By &lt;span property="dc:creator"&gt;Steve Bird&lt;/span&gt;. See
+  &lt;a href="http://www.a.b.c/d.avi" rel="dcmtype:MovingImage"&gt;
+  also video footage&lt;/a&gt;…
+&lt;/div&gt;</pre>
+</div>
+		<ul>
+		  <li class="noBullet">yields, by running the file through a processor:</li>
+		</ul>
+
+<div class="preDiv">
+<pre class="preFirst preLast">&lt;http://uri.to.newsitem&gt;
+  dc:date             "March 23, 2004";
+  dc:title            "Rollers hit casino for £1.3m;
+  dc:creator          "Steve Bird";
+  dcmtype:MovingImage &lt;http://www.a.b.c/d.avi&gt;.</pre>
+</div>
+</div>
+		<div class="slide">
+			<h1>Linking to SQL</h1>
+			<ul>
+				<li>A huge amount of data in Relational Databases</li>
+				<li>Although tools exist, it is not feasible to <em>convert</em> that data into RDF</li>
+				<li>Instead: SQL <span class="math">⇋</span> RDF “bridges” are being developed:
+					<ul>
+						<li>a query to RDF data is transformed into SQL on-the-fly</li>
+						<li>the modalities are governed by small, local ontologies or rules</li>
+					</ul>
+				</li>
+				<li>An active area of development!</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>And for Ontologies?</h1>
+			<ul>
+				<li>The hard work is to <em>create</em> the ontologies in general
+					<ul><li>requires a good knowledge of the area to be described</li>
+						<li>some communities have good expertise already (e.g., librarians)</li>
+						<li>
+							<em>OWL is just a tool to formalize ontologies</em>
+						</li>
+					</ul>
+				</li>
+				<li>Large scale ontologies are often developed in a community process
+					<ul><li>leading to versioning issues, too</li>
+						<li>OWL includes predicates for versioning, deprecation, “same-ness”, …</li>
+					</ul>
+				</li>
+				<li>There is also R&amp;D in <em>generating</em> them from a corpus of data
+					<ul><li>still mostly a research subject</li>
+					</ul>
+				</li>
+				<li>Sharing ontologies may be vital in the process</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>There are already ontologies around…</h1>
+			<ul>
+				<li>Lots of ontologies registered at <a href="http://www.schemaweb.info">Schemaweb</a>
+				</li>
+				<li>
+					<a href="http://www.daml.org/ontologies">DAML ontology library</a> has
+					several hundreds of ontologies </li>
+				<li>Ontologies are being developed by various communities:
+					<ul><li>medical domain (e.g., the US Cancer Institute’s <a href="http://www.mindswap.org/2003/CancerOntology/">Cancer
+					Ontology</a>, the <a href="http://www.geneontology.org/">Gene Ontology</a>, the <a href="http://www.biopax.org/">BioPax</a>
+						Molecular Pathway Ontology, …)</li>
+						<li>cultural heritage domain (e.g., <a href="http://cidoc.ics.forth.gr/">CIDOC reference model and ontology</a>)</li>
+						<li><a href="http://www.w3.org/TR/wordnet-rdf/">OWL representation of (English) Wordnet</a></li>
+						<li>eBusiness ontology for products and services: <a href="http://www.heppnetz.de/eclassowl">eClassOwl</a></li>
+						<li>…</li>
+					</ul>
+				</li>
+				<li>
+					<em>Use existing ontologies when you can!</em>
+				</li>
+			</ul>
+		</div>
+		
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>“Core” vocabularies</h1>
+			<ul>
+				<li>A number of public “core” vocabularies evolve to be used by applications, e.g.:
+					<ul><li><a href="http://www.w3.org/TR/swbp-skos-core-guide">SKOS Core</a>: about knowledge systems</li>
+						<li>
+							<a href="http://www.dublincore.org">Dublin Core</a>: about information resources, digital libraries, with extensions for rights, permissions, digital right management</li>
+						<li>
+							<a href="http://xmlns.com/foaf/0.1/">FOAF</a>: about people and their organizations</li>
+						<li>
+							<a href="http://usefulinc.com/doap">DOAP</a>: on the descriptions of  software projects</li>
+						<li>
+							<a href="http://musicbrainz.org/MM/index.html">MusicBrainz</a>: on the description of CDs, music tracks, …</li>
+					  <li><a href="http://rdfs.org/sioc/">SIOC</a>: Semantically-Interlinked Online Communities</li>
+						<li>…</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>A mix of ontologies (a life science example)…</h1>
+			<div style="text-align:center">
+			<object width="90%" height="73%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/figures/HCOntologies.svg"
+			title="diagram showing a large number of HC related ontologies bound via a RFD-like graph">
+			  <img alt="diagram showing a large number of HC related ontologies bound via a RFD-like graph"
+			  src="../../../People/Ivan/CorePresentations/figures/HCOntologies.png" /></object>
+			</div>	
+		</div>
+		
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>How do I extract triplets from and RDF Graph? Ie: how do I query an RDF Graph?</h2>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Querying RDF graphs</h1>
+			<ul>
+				<li>The fundamental idea: use <em>graph patterns</em> to define subgraphs:
+					<ul><li>a pattern contains unbound symbols</li>
+						<li>by binding the symbols, subgraphs of the RDF graph may be matched</li>
+						<li>if there is such a match, the query returns the bound resources or a subgraph</li>
+					</ul>
+				</li>
+				<li>This is the how <a href="http://www.w3.org/TR/rdf-sparql-query/">SPARQL</a> (Query Language for RDF) is defined
+				</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Simple SPARQL Example</h1>
+			
+			<div class="preDiv">
+				<pre class="preFirst">SELECT ?cat ?val # note: not ?x!</pre>
+				<pre class="preLast">WHERE { ?x rdf:value ?val. ?x category ?cat }</pre>
+			</div>
+			<ul>
+			  <li class="noBullet">Returns: <code>[["Total Members",100],["Total
+				Members",200],…,["Full Members",10],…]</code></li>
+			</ul>
+		
+			<div style="position:relative; margin-left:1em">
+				<object style="position:absolute; left: 0pt; top:0pt" width="90%" height="50%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-0.svg"
+					title="a simple graph with two tree like subgraphs">
+				  <img alt="a simple graph with two tree like subgraphs" src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-0.png" />
+				</object>
+				
+				
+				<div class="incremental">
+					<object style="position:absolute; left: 0pt; top:0pt" width="90%" height="50%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-1.svg"
+						title="a simple graph with two tree like subgraphs with selected nodes in the left subgraph highlighted">
+					  <img alt="a simple graph with two tree like subgraphs left subgraph highlighted" src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-1.png" />
+					</object>
+					<object style="position:absolute; left: 0pt; top:0pt" width="90%" height="50%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-2.svg"
+						title="a simple graph with two tree like subgraphs with selected nodes in the left subgraph highlighted">
+					  <img alt="a simple graph with two tree like subgraphs with selected nodes in the left subgraph highlighted" src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-2.png" />
+					</object>
+					<object style="position:absolute; left: 0pt; top:0pt" width="90%" height="50%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-3.svg"
+						title="a simple graph with two tree like subgraphs with selected nodes in the right subgraph highlighted">
+					  <img alt="a simple graph with two tree like subgraphs with selected nodes in the right subgraph highlighted" src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-3.png" />
+					</object>
+					<object style="position:absolute; left: 0pt; top:0pt" width="90%" height="50%" type="image/svg+xml" data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-4.svg"
+						title="a simple graph with two tree like subgraphs with selected nodes in the right subgraph highlighted">
+					  <img alt="a simple graph with two tree like subgraphs with selected nodes in the right subgraph highlighted" src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/sparqlPatternAnim-4.png" />
+					</object>
+				</div>
+			</div>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Other SPARQL features</h1>
+			<ul>
+				<li>Define <em>optional</em> patterns</li>
+				<li>Limit the number of returned results; remove duplicates, sort them,…</li>
+				<li>Add functional constraints to pattern matching</li>
+				<li>Return a full <em>subgraph</em> (instead of a list of bound variables)</li>
+				<li>Use datatypes and/or language tags when matching a pattern</li>
+				<li>SPARQL is not yet finalized, but will become a Recommendation (hopefully) in 2<sup>nd</sup> Quarter of 2007
+					<ul>
+						<li>but there are a number of <a href="http://esw.w3.org/topic/SparqlImplementations">implementations</a> already!</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>SPARQL usage in practice</h1>
+			<ul>
+				<li>
+					<em>Locally</em>, i.e., bound to a programming environment like RDFLib or Jena
+						<ul><li>details are language dependent</li>
+					</ul>
+				</li>
+				<li>
+					<em>Remotely</em>, e.g., over the network or into a database
+						<ul><li><em>very</em> important usage: a growing number of RDF  depositories…</li>
+						<li>separate documents define the protocol and the result format
+							<ul><li><a href="http://www.w3.org/TR/rdf-sparql-protocol/">SPARQL Protocol for RDF</a>
+								</li>
+								<li>
+									<a href="http://www.w3.org/TR/rdf-sparql-XMLres/">SPARQL Results XML Format</a>
+								</li>
+								  <li>there is also a <a href="http://www.mindswap.org/~kendall/sparql-results-json/">JSON</a>
+								  binding (soon a W3C note…)</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>An application pattern evolves: use (XHTML) forms to create a SPARQL
+					Query to a database and display the result in XHTML
+						<ul><li>there are a number of <a href="http://esw.w3.org/topic/DawgShows">application experiments,  demos, etc.,</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>SPARQL as a federating tool</h1>
+		
+			<div style="text-align:center">
+			<object width="90%" height="74%" type="image/svg+xml"
+			data="../../../People/Ivan/CorePresentations/RDFTutorial/figures/SPARQLUsage.svg"
+			title="diagram showing a sparql that can be connected to an rdf datafile, a document via grddl, and to a database via an sparql/sql bridge">
+			  <img alt="diagram showing a sparql that can be connected to an rdf datafile, a document via grddl, and to a database via an sparql/sql bridge"
+			  src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/SPARQLUsage.png" /></object>
+			</div>	
+				
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>Isn't This Research Only?</h2>
+			<p>(or: does this have <em>any</em> industrial relevance whatsoever?)</p>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Not any more…</h1>
+			<ul>
+				<li><em>Lots</em> of tools are available. Are listed <a href="http://esw.w3.org/topic/SemanticWebTools">on W3C’s wiki</a>:
+					<ul>
+						<li>RDF programming environment for 14+ languages, including C, C++, Python, Java, 
+						Javascript, Ruby, PHP,… (no Cobol or Ada yet&nbsp;<img alt="sad smiley" src="../../../People/Ivan/CorePresentations/figures/smileys/sad.png"/>!)</li>
+						<li>13+ Triple Stores, ie, database systems to store (sometimes huge!) datasets</li>
+						<li>a number programming environments (in Java, Prolog, …) include OWL reasoners</li>
+						<li>there are also stand-alone reasoners (downloadable or on the Web)</li>
+						<li>etc</li>
+					</ul>
+				</li>
+				<li>Some of the tools are Open Source, some are not; some are very mature, some
+				are not&nbsp;<img alt="wink smiley" src="../../../People/Ivan/CorePresentations/figures/smileys/wink.png"/>: 
+				<em>it is the usual picture of software tools</em>, nothing special any more!</li>
+				<li><em>Anybody can start developing RDF-based applications today</em></li>
+			</ul>
+		</div>
+		<div class="slide">
+			<h1>Not any more… (cont)</h1>
+			<ul>
+				<li>SW has indeed a strong foundation in research results</li>
+				<li>But remember:
+					<ul>
+					    <li class="noBullet">(1) the Web was born at CERN…</li>
+						<li class="noBullet">(2) …was first picked up by high energy physicists…</li>
+						<li class="noBullet">(3) …then by academia at large…</li>
+						<li class="noBullet">(4) …then by small businesses and start-ups…</li>
+						<li class="noBullet">(5) “big business” came only later!</li>
+					</ul>
+				</li>
+				<li class="noBullet">network effect kicked in early…</li>
+				<li>Semantic Web is now at #4, and moving to #5!</li>
+			</ul>
+		</div>		
+		
+		<div class="slide">
+			<h1>Some RDF deployment areas</h1>
+			
+				<table border="1">
+				  <caption></caption>
+				  <tbody>
+					<tr>
+					  <td></td>
+					  <th>Library metadata</th>			
+					  <th>Defence</th>
+					  <th>Life sciences</th>
+					</tr>
+					<tr>
+					  <td>Problem to solve?</td>
+					  <td>single-domain integration</td>
+					  <td>yes, serious data integration needs</td>
+					  <td>yes, connections among genetics, proteomics, clinical trials,
+						regulatory,&nbsp;…</td>
+					</tr>
+					<tr>
+					  <td>Willingness to adopt?</td>
+					  <td>yes: OCLC push and Dublin Core initiative</td>
+					  <td>yes: funded early DAML (OWL) work</td>
+					  <td>yes: intellectual level high, much modeling done already.</td>
+			
+					</tr>
+					<tr>
+					  <td>Motivation</td>
+					  <td>light</td>
+					  <td>strong</td>
+					  <td>very strong</td>
+					</tr>
+			
+					<tr>
+					  <td>Links to</td>
+					  <td>other library data</td>
+					  <td>phone calls records, etc</td>
+					  <td>chemistry, regulatory, medical, etc</td>
+					</tr>
+					<tr>
+			
+					  <td>Showcase?</td>
+					  <td>limited</td>
+					  <td>not at all</td>
+					  <td>yes, model for other industries.</td>
+					</tr>
+				  </tbody>
+				</table>
+			
+		</div>
+		
+		<div class="slide">
+			<h1>Some RDF deployment areas (cont)</h1>
+			<ul>
+				<li>These are just examples</li>
+				<li>Others are coming to the fore: eGovernment, energy sector (oil industry), financial services,&nbsp;…</li>
+				<li>Health care and life science sector is now very active
+					<ul><li>also at W3C, in the form of an Interest Group</li></ul>
+				</li>
+			</ul>
+		</div>
+			
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>The “corporate” landscape is moving</h1>
+			<ul>
+				<li>See, for example, the <a href="http://www.semantic-conference.com/">Semantic Technology Conference</a> series
+					<ul>
+						<li><em>not</em> a scientific conference, but commercial people making real money!</li>
+						<li>speakers in 2006: from IBM, Cisco, BellSouth, GE, Walt Disney, Nokia, Oracle, …</li>
+						<li>not all referring to <em>Semantic Web</em> (eg, RDF, OWL,&nbsp;…) but semantics in general</li>
+						<li>but they might come around!</li>						
+					</ul>
+				</li>
+				<li>Major companies offer (or will offer) Semantic Web tools or systems using Semantic 
+				Web: Adobe, Oracle, IBM, HP, Software AG, webMethods, Northrop Gruman, Altova,&nbsp;…</li>
+                <li>“Corporate Semantic Web” <a href="http://news.zdnet.co.uk/business/0,39020645,39280643,00.htm">listed</a> as major technology by Gartner in 2006</li>
+			</ul>
+		</div>
+		
+
+		<div class="slide" id="simplAppl">
+			<h1>Applications are not always very complex…</h1>
+			
+			<ul>
+				<li>Eg: simple semantic annotations of patients’ data greatly enhances communications among doctors</li>
+				<li>What is needed: some simple ontologies, an RDFa/microformat type editing environment</li>
+				<li>Simple but powerful!</li>
+			</ul>
+			<div style="text-align:center; margin-left:2.5em; margin-top:0.5em;">
+			  <img alt="The Active Semantic Doc picture: a doctor's file with annotations"
+			  src="../../../People/Ivan/CorePresentations/pngs/ActiveSemanticDoc.png" />
+			</div>
+		</div>
+		<div class="slide">
+			<h1>Data integration</h1>
+			<ul>
+				<li>Data integration comes to the fore as one of <em>the</em> SW Application areas</li>
+				<li>Very important for large application areas (life sciences, energy sector, eGovernment, financial institutions),
+				as well as everyday applications (eg, reconciliation of calendar data)</li>
+				<li>Life sciences example:
+					<ul>
+						<li>data in different labs…</li>
+						<li>data aimed at scientists, managers, clinical trial participants… </li>
+						<li>large scale public ontologies (genes, proteins, antibodies, …)</li>
+						<li>different formats (databases, spreadsheets, XML data, XHTML pages)</li>
+						<li>etc</li>	
+					</ul>
+				</li>
+			</ul>		 
+		</div>		
+		<div id="app_integration3" class="slide">
+			<h1>Example: antibodies demo</h1>
+			<ul class="outline">
+				<li>Scenario: find the known antibodies for a protein in a specific species</li>
+				<li>Combine (“scrape”…) three different data sources
+					<ul>
+						<li>“Entrez protein sequence” from <a href="http://www.ncbi.nlm.nih.gov/">National Center for Biotechnology Information</a>; conversion to RDF</li>
+						<li>“Antibody Directory” from <a href="http://alzforum.org/res/com/ant/default.asp">Alzheimer Research Forum</a>; 
+						scraping RDF from HTML</li>
+						<li>“Taxonomy information” from <a href="http://www.wikispecies.org">Wikispecies</a>; use XSLT to extract RDF from XHTML</li>
+					</ul>
+				</li>
+				<li>Use SPARQL as an integration tool (see also <a href="http://thefigtrees.net/lee/sw/demos/antibodies/">demo online</a>)</li>	
+			</ul>
+		
+			<div style="text-align:center; margin-left:2.5em; margin-top:0.5em;">
+			  <img alt="Antibodies' demo screen dump"
+			  src="../../../People/Ivan/CorePresentations/pngs/Antibodies.png" />
+			</div>		
+		</div>
+		<div class="slide">
+			<h1>There has been lots of R&amp;D</h1>
+			<ul>
+				<li><a href="http://www.cs.rutgers.edu/~shklar/www11/final_submissions/paper3.pdf">Boeing</a>,
+					MITRE Corp., <a href="http://aduna.biz/dope/">Elsevier</a>, EU Projects like <a href="http://www.SCULPTEURweb.org/">Sculpteur</a> and 
+					<a href="http://www.ecs.soton.ac.uk/~km/projs/artiste/">Artiste</a>, national projects like 
+					<a href="http://museosuomi.cs.helsinki.fi/">MuseoSuomi</a>, <a href="http://ccnt.zju.edu.cn/projects/dartgrid/intro.html">DartGrid</a>, …
+				</li>
+				<li>Developments are under way at various places in the area</li>
+			</ul>
+			<div style="text-align:center; position:relative; margin-left:2.5em; margin-top:0.5em;">
+				<img src="../../../People/Ivan/CorePresentations/RDFTutorial/figures/MuseoSuomi.jpg" alt="MuseoSuomi Application dump" style="position:absolute; position:absolute; left: 0pt; top:0pt'"/>
+				<img alt="Traditional Chinese medicine example dump" style="position:absolute; position:absolute; left: 430px; top:0pt'" src="../../../People/Ivan/CorePresentations/figures/traditionalChinese.jpg" />
+			</div>
+		</div>
+
+      <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Portals</h1>
+			<img src="../../../People/Ivan/CorePresentations/jpgs/vodafone.jpg" style="float:right; margin-right:1em;" height="330" alt="Vodafone screen dump" width="195"/>
+			<ul>
+				<li>Vodafone's Live Mobile Portal
+					<ul><li>search application (e.g. ringtone, game, picture) using RDF
+							<ul><li>page views per download decreased 50%</li>
+								<li>ringtone up 20% in 2 months</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>Sun’s SwordFish: public queries for support, handbooks, etc, go
+				through an internal RDF engine for <a href="http://www.sun.com/servers/wp.html/">White Paper Collections</a>
+				and <a href="http://sunsolve.sun.com/handbook_pub/">System Handbook
+				collections</a>
+				</li>
+				<li>Nokia has a somewhat similar <a href="http://www.forum.nokia.com/main.html">support portal</a>
+				</li>
+				<li><a href="http://www.harpers.org/">Harper’s Online magazine</a> links items together <a href="http://www.ftrain.com/AWebSiteForHarpers.html">via an internal ontology</a></li>
+				<li>See also Opera’s presentation later today…</li>
+			</ul>
+			<p style="clear:both"/>
+		</div>
+		<div class="slide">
+			<h1>Improved Search via Ontology: GoPubMed</h1>
+			<ul>
+				<li>
+					<a href="http://www.gopubmed.org/">Improved search on top of pubmed.org</a>
+						<ul>				
+							<li>search results are ranked using the specialized ontologies</li>
+							<li>extra search terms are generated and terms are highlighted</li>
+						</ul>				
+				</li>
+				<li>Importance of <em>domain specific ontologies</em> for search improvement</li>
+			</ul>
+			<div style="text-align:center">
+				<img src="../../../People/Ivan/CorePresentations/pngs/gopubmed.png" alt="GoPubMed Application dump"/>
+			</div>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Adobe's XMP</h1>
+			<ul>
+				<li>Adobe’s (public) <a href="http://www.adobe.com/products/xmp/main.html">tool</a> to add RDF-based metadata to <em>most</em> of their file formats
+				<ul>
+						<li>supported in Adobe Creative Suite</li>
+						<li>support from 30+ major asset management vendors, with separate XMP conferences; will be used in Windows Vista</li>
+					</ul>
+				</li>
+			</ul>
+			<div style="text-align:center">
+				<a href="../../../People/Ivan/CorePresentations/RDFTutorial/rdfs/xmp.xml">
+					<img src="../../../People/Ivan/CorePresentations/jpgs/XMP.jpg" alt="XMP Application dump" height="40%" width="40%"/>
+				</a>
+			</div>
+		</div>
+        <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1>Baby CareLink</h1>
+			<ul>
+				<li>Centre of information for the treatment of premature babies</li>
+				<li>Provides an OWL service <em>as a Web Service</em>
+					<ul>
+						<li>combines disparate vocabularies like medical, insurance, etc</li>
+						<li>users can add new entries to ontologies</li>
+						<li>complex questions can be asked through the service</li>
+					</ul>
+				</li>
+			</ul>
+			<div style="text-align: center;">
+				<img src="../../../People/Ivan/CorePresentations/pngs/BabyCareLink.png" alt="Baby care link application dump" height="40%" width="40%"/>
+			</div>
+		</div>
+		<div class="slide">
+			<h1>Summary</h1>
+			<ul>
+				<li>The Semantic Web is not as complex as people believe</li>
+				<li>The Semantic Web does not require huge investments before seeing its value</li>
+				<li>The Semantic Web is not only for geeks…</li>
+			</ul>		
+		</div>
+		
+		
+         <!-- ========= new slide ========== -->
+		<div class="slide">
+			<h1 class="emptyTitle"> </h1>
+			<h2>Thank you for your attention!</h2>
+		</div>
+	</body>
+</html>

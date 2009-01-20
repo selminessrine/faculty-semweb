@@ -1,0 +1,220 @@
+/* SlidyAddon.css
+
+   Copyright (c) 2005 W3C (MIT, ERCIM, Keio), All Rights Reserved.
+   W3C liability, trademark, document use and software licensing
+   rules apply, see:
+
+   http://www.w3.org/Consortium/Legal/copyright-documents
+   http://www.w3.org/Consortium/Legal/copyright-software
+
+   Slidy is one of the slide generation/display tools at W3C, developed by Dave Raggett. It has
+   a 'canonical' style sheet at http://www.w3.org/2005/03/{slideshow,w3c-blue}.css. 
+   Then a separate version was developed for the AC Meeting in Montreal, in December 2005.
+   This style sheets adds some classes and slightly modifies some of the settings in the 
+   Montreal set for my own slides.
+   
+   Ivan Herman
+   
+*/
+
+
+ol li { 
+	margin: 0.1em 0em 0.6em 1.5em;
+	padding: 0 0 0 0px;
+	line-height: 140%;
+	list-style-type: decimal;
+}
+
+
+div.slide h2 {
+	color: black;
+	background: transparent;
+}
+
+
+code {
+	color: #00428C;
+	font-weight: bold;
+}
+
+li li { 
+	font-size: 95%; 
+	font-style: normal;
+}
+li li li { 
+	font-size: 95%; 
+}
+
+/*
+li li li li {
+	list-style-type: disc;
+	background: transparent;
+	padding: 0 0 0 0;
+}
+*/
+
+ol li ul li {
+	list-style-type: disc;
+}
+
+p, pre, ul, ol, blockquote, dl {
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+a:hover { 
+	color: red;
+	background: yellow;
+}
+
+/* This was set to navy in the original setup; I do not think it is a good
+idea to have a different colour for a visited link than to a non-visited one
+during a presentation */
+a:visited { color: navy }
+a:link { color: navy }
+
+
+div.slide.cover a:hover {
+	color: red;
+}
+
+div.slide dt
+{
+	margin-left: 0;
+	margin-top: 0.2em;
+	margin-bottom: 0em;
+	color:#006699;
+}
+
+em {
+	color: maroon;
+}
+
+
+.emph1 { 
+	color: blue;
+}
+.emph2 { 
+	color: #006400;
+}
+.emph3 { 
+	color: #cc0066;
+} 
+.emph4 { 
+	color: #ff00cc;
+}
+.emph5 { 
+	color:red;
+}
+
+ol.toc li {
+	font-size: 60%;
+	background: transparent;
+	padding: 0 0 0 0px;
+	line-height: 100%;
+}
+
+/* The pre style of Karl/Dave is nice but creates problems with my converted things for now... */
+pre {
+	 border: none;
+	 background: white;
+	 color: rgb(0,128,0); 
+	 font-size: 75%;
+	 font-weight: bold; 
+	 line-height: 120%;
+	 padding-top: 0.2em;
+	 padding-bottom: 0.2em;
+	 padding-left: 1em;
+	 padding-right: 0.1em;
+	 color: #00428C;
+}
+
+div.preDiv {
+	/* background: #dbdcde; */
+	background: white;
+	margin: 1em;
+}
+div.preDiv pre.preFirst {
+	background: white;
+	border-top: solid thin #95ABD0;
+	border-left: solid thin #95ABD0;
+	border-right: solid thin #95ABD0;
+    border-left-width: 1em;
+	border-bottom-width: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	margin: 0;
+}
+
+div.preDiv pre.preMiddle {
+	background: white;
+	border-left: solid thin #95ABD0;
+	border-right: solid thin #95ABD0;
+    border-left-width: 1em;
+	border-bottom-width: 0;
+	border-top-width: 0;
+	padding-bottom: 0;
+	padding-top: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 100%;
+	margin: 0;
+}
+
+div.preDiv pre.preLast {
+	background: white;
+	border-bottom: solid thin #95ABD0;
+	border-left: solid thin #95ABD0;
+	border-right: solid thin #95ABD0;
+    border-left-width: 1em;
+	border-top-width: 0;
+	margin-top: 0;
+	padding-top: 0;
+	margin: 0;
+}
+
+div.preDiv pre.preFirst.preLast {
+	background: white;
+	border: solid thin #95ABD0;
+    border-left-width: 1em;
+	margin-top: 0;
+	padding-top: 0;
+	margin: 0;
+}
+
+
+/* These are needed for the leftover of my scripts... */
+.svgOnly { 
+	display: none; 
+	visibility: hidden;
+}
+
+.center, .centre { 
+	text-align: center; 
+} 
+
+li.noBullet {
+	list-style: none;
+	background: transparent;
+}
+
+div.tocref {
+		width: 4em;
+		text-align: right;
+		float: left;
+		font-size:80%;
+}
+div.tocref:after { content: '.' }
+div.tocentry {
+		text-align: left;
+		margin-left: 4.5em;
+		font-size:80%;
+}
+
+table.tocTable tr.even {
+	background: #EFEBCE;
+}
+
+table.tocTable td {
+	border: none;
+}
