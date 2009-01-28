@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns="http://faculty-semweb.googlecode.com/svn/trunk/ontorepo//family.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xml:base="http://faculty-semweb.googlecode.com/svn/trunk/ontorepo//family.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="Niece">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Woman"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Uncle">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Man"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Sister">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Sibling"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Person"/>
+  <owl:Class rdf:about="#Man">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Nephew">
+    <rdfs:subClassOf rdf:resource="#Man"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Child">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Aunt">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Woman"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Woman">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Gender">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:oneOf rdf:parseType="Collection">
+          <Gender rdf:ID="Male"/>
+          <Gender rdf:ID="Female"/>
+        </owl:oneOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Mother">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Parent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Sibling">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Father">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Parent"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Daughter">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Child"/>
+          <owl:Class rdf:about="#Woman"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Brother">
+    <rdfs:subClassOf rdf:resource="#Sibling"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Son">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#Man"/>
+          <owl:Class rdf:about="#Child"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Parent">
+    <rdfs:subClassOf rdf:resource="#Person"/>
+  </owl:Class>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <Gender rdf:about="#Male"/>
+      <Gender rdf:about="#Female"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4, Build 519)  http://protege.stanford.edu -->
