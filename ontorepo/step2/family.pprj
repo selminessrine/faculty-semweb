@@ -1,4 +1,4 @@
-; Thu Jan 29 14:36:49 EET 2009
+; Thu Jan 29 17:54:47 EET 2009
 ; 
 ;+ (version "3.4")
 ;+ (build "Build 519")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[family_ProjectKB_Class56]
-		[family_ProjectKB_Class57]
-		[family_ProjectKB_Class58]
-		[family_ProjectKB_Class59]
-		[family_ProjectKB_Class60]))
+		[family_ProjectKB_Class7597]
+		[family_ProjectKB_Class7598]
+		[family_ProjectKB_Class7599]
+		[family_ProjectKB_Class7600]
+		[family_ProjectKB_Class7601]))
 
 ([CLSES_TAB] of  Widget
 
@@ -236,39 +236,39 @@
 ([family_ProjectKB_Class50] of  Property_List
 )
 
-([family_ProjectKB_Class56] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([family_ProjectKB_Class57] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([family_ProjectKB_Class58] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([family_ProjectKB_Class59] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
 ([family_ProjectKB_Class6] of  Property_List
 )
-
-([family_ProjectKB_Class60] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class7] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [family_ProjectKB_Class8])
 	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
+([family_ProjectKB_Class7597] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([family_ProjectKB_Class7598] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class7599] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([family_ProjectKB_Class7600] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class7601] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class8] of  Property_List
 )
@@ -1008,7 +1008,7 @@
 ([KB_444675_Instance_0] of  String
 
 	(name "SwitchableClassDefinitionType")
-	(string_value "edu.stanford.smi.protegex.owl.ui.cls.PropertiesClassDefinitionWidget"))
+	(string_value "edu.stanford.smi.protegex.owl.ui.cls.LogicClassDefinitionWidget"))
 
 ([KB_465546_Instance_567] of  Widget
 

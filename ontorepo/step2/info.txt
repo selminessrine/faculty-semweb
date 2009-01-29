@@ -1,0 +1,2 @@
+ * step1 + individuals
+	- (sadece sýnýf hiyerarþisi + individuals var)
