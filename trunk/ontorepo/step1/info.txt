@@ -1,0 +1,3 @@
+ * sadece sýnýf hiyerarþisi
+	- inviduals yok
+	- swrl (ve bunda kullanýlacak hasAunt, hasConsort, hasNephew, hasNiece) yok
