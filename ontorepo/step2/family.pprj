@@ -1,4 +1,4 @@
-; Thu Jan 29 17:54:47 EET 2009
+; Tue Feb 03 14:41:36 EET 2009
 ; 
 ;+ (version "3.4")
 ;+ (build "Build 519")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[family_ProjectKB_Class7597]
-		[family_ProjectKB_Class7598]
-		[family_ProjectKB_Class7599]
-		[family_ProjectKB_Class7600]
-		[family_ProjectKB_Class7601]))
+		[family_ProjectKB_Class6037]
+		[family_ProjectKB_Class6038]
+		[family_ProjectKB_Class6039]
+		[family_ProjectKB_Class6040]
+		[family_ProjectKB_Class6041]))
 
 ([CLSES_TAB] of  Widget
 
@@ -236,39 +236,204 @@
 ([family_ProjectKB_Class50] of  Property_List
 )
 
+([family_ProjectKB_Class5958] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2003/11/swrl#Imp")
+	(property_list [family_ProjectKB_Class5961])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget"))
+
+([family_ProjectKB_Class5961] of  Property_List
+
+	(properties
+		[family_ProjectKB_Class5962]
+		[family_ProjectKB_Class5965]
+		[family_ProjectKB_Class5968]
+		[family_ProjectKB_Class5971]
+		[family_ProjectKB_Class5973]
+		[family_ProjectKB_Class5975]
+		[family_ProjectKB_Class5977]
+		[family_ProjectKB_Class5979]
+		[family_ProjectKB_Class5981]
+		[family_ProjectKB_Class5983]
+		[family_ProjectKB_Class5988]))
+
+([family_ProjectKB_Class5962] of  Widget
+
+	(height 120)
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [family_ProjectKB_Class5963])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadata.NameDocumentationWidget")
+	(width 200)
+	(x 0)
+	(y 0))
+
+([family_ProjectKB_Class5963] of  Property_List
+
+	(properties
+		[family_ProjectKB_Class6034]
+		[family_ProjectKB_Class6035]))
+
+([family_ProjectKB_Class5965] of  Property_List
+
+	(name "layout properties")
+	(properties
+		[family_ProjectKB_Class5966]
+		[family_ProjectKB_Class5967]))
+
+([family_ProjectKB_Class5966] of  String
+
+	(name "horizontal_stretcher")
+	(string_value "<<all>>"))
+
+([family_ProjectKB_Class5967] of  String
+
+	(name "vertical_stretcher")
+	(string_value "http://www.w3.org/2003/11/swrl#body"))
+
+([family_ProjectKB_Class5968] of  Widget
+
+	(height 0)
+	(is_hidden FALSE)
+	(name "http://protege.stanford.edu/plugins/owl/protege#inferredType")
+	(property_list [family_ProjectKB_Class5969])
+	(width 0)
+	(x 0)
+	(y 0))
+
+([family_ProjectKB_Class5969] of  Property_List
+)
+
+([family_ProjectKB_Class5971] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2002/07/owl#versionInfo")
+	(property_list [family_ProjectKB_Class5972]))
+
+([family_ProjectKB_Class5972] of  Property_List
+)
+
+([family_ProjectKB_Class5973] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#isDefinedBy")
+	(property_list [family_ProjectKB_Class5974]))
+
+([family_ProjectKB_Class5974] of  Property_List
+)
+
+([family_ProjectKB_Class5975] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(property_list [family_ProjectKB_Class5976]))
+
+([family_ProjectKB_Class5976] of  Property_List
+)
+
+([family_ProjectKB_Class5977] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#seeAlso")
+	(property_list [family_ProjectKB_Class5978]))
+
+([family_ProjectKB_Class5978] of  Property_List
+)
+
+([family_ProjectKB_Class5979] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2000/01/rdf-schema#label")
+	(property_list [family_ProjectKB_Class5980]))
+
+([family_ProjectKB_Class5980] of  Property_List
+)
+
+([family_ProjectKB_Class5981] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled")
+	(property_list [family_ProjectKB_Class5982]))
+
+([family_ProjectKB_Class5982] of  Property_List
+)
+
+([family_ProjectKB_Class5983] of  Widget
+
+	(is_hidden FALSE)
+	(name "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#hasRuleGroup")
+	(property_list [family_ProjectKB_Class5984]))
+
+([family_ProjectKB_Class5984] of  Property_List
+)
+
+([family_ProjectKB_Class5988] of  Widget
+
+	(height 300)
+	(is_hidden FALSE)
+	(name "http://www.w3.org/2003/11/swrl#body")
+	(property_list [family_ProjectKB_Class5989])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.widget.SWRLRuleSlotWidget")
+	(width 200)
+	(x 0)
+	(y 120))
+
+([family_ProjectKB_Class5989] of  Property_List
+)
+
 ([family_ProjectKB_Class6] of  Property_List
 )
+
+([family_ProjectKB_Class6034] of  Widget
+
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [family_ProjectKB_Class6036])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([family_ProjectKB_Class6035] of  Widget
+
+	(is_hidden FALSE)
+	(label "Comment")
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([family_ProjectKB_Class6036] of  Property_List
+)
+
+([family_ProjectKB_Class6037] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class6038] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([family_ProjectKB_Class6039] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class6040] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([family_ProjectKB_Class6041] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class7] of  Widget
 
 	(is_hidden TRUE)
 	(property_list [family_ProjectKB_Class8])
 	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
-
-([family_ProjectKB_Class7597] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([family_ProjectKB_Class7598] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([family_ProjectKB_Class7599] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([family_ProjectKB_Class7600] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([family_ProjectKB_Class7601] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class8] of  Property_List
 )
@@ -625,9 +790,6 @@
 	(property_list [KB_100699_Instance_11])
 	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
 
-([KB_119338_Class0] of  Map
-)
-
 ([KB_140180_Instance_0] of  Widget
 
 	(is_hidden FALSE)
@@ -734,6 +896,9 @@
 	(property_list [KB_140180_Instance_9]))
 
 ([KB_140180_Instance_9] of  Property_List
+)
+
+([KB_157735_Class0] of  Map
 )
 
 ([KB_221055_Instance_10] of  Widget
@@ -5597,11 +5762,12 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[KB_713803_Instance_477]
-		[KB_313796_Instance_852]
-		[KB_691299_Instance_398]
 		[PAL_FORM_WIDGET]
+		[KB_691299_Instance_398]
+		[KB_313796_Instance_852]
 		[Instance_581]
 		[KB_713803_Instance_693]
+		[family_ProjectKB_Class5958]
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[KB_938545_Instance_166]
 		[STANDARD_SLOT_FORM_WIDGET]
@@ -5621,8 +5787,8 @@
 		[KB_938545_Instance_329]
 		[KB_764103_Instance_545]
 		[KB_301165_Instance_1013]
-		[KB_713803_Instance_390]
-		[Instance_443])
+		[Instance_443]
+		[KB_713803_Instance_390])
 	(default_cls_metaclass "http://www.w3.org/2002/07/owl#Class")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormWidget")
@@ -5636,8 +5802,8 @@
 		":MODIFIER"
 		"http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS"
 		"http://www.w3.org/2000/01/rdf-schema#Container"
-		":SLOT-NUMERIC-MINIMUM"
 		"http://www.w3.org/2001/XMLSchema#integer"
+		":SLOT-NUMERIC-MINIMUM"
 		"http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement"
 		":NUMERIC-MAXIMUM"
@@ -5675,22 +5841,22 @@
 		"http://www.w3.org/2002/07/owl#equivalentClass"
 		"http://www.w3.org/2002/07/owl#FunctionalProperty"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSubclassOf"
-		":PAL-DESCRIPTION"
 		"http://www.w3.org/2003/11/swrl#SameIndividualAtom"
-		"http://www.w3.org/2001/XMLSchema#anyURI"
-		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		":PAL-DESCRIPTION"
 		"http://www.w3.org/2002/07/owl#MinCardinalityRestriction"
+		"http://www.w3.org/2002/07/owl#AnonymousClass"
+		"http://www.w3.org/2001/XMLSchema#anyURI"
 		"http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
 		":CLASS"
 		"http://www.w3.org/2002/07/owl#complementOf"
 		":ROLE"
-		":DOCUMENTATION-IN-FRAME"
-		"http://www.w3.org/2002/07/owl#IntersectionClass"
 		"http://www.w3.org/2002/07/owl#TransitiveProperty"
+		"http://www.w3.org/2002/07/owl#IntersectionClass"
+		":DOCUMENTATION-IN-FRAME"
 		"http://www.w3.org/2000/01/rdf-schema#range"
 		"http://www.w3.org/2001/XMLSchema#gYearMonth"
-		":CREATOR"
 		"http://www.w3.org/2002/07/owl#ComplementClass"
+		":CREATOR"
 		":ASSOCIATED-FACET"
 		":DOCUMENTATION"
 		":DIRECT-SUPERCLASSES"
@@ -5702,23 +5868,22 @@
 		":MODIFICATION-TIMESTAMP"
 		"http://www.w3.org/2001/XMLSchema#gYear"
 		"http://www.w3.org/2001/XMLSchema#gMonthDay"
-		"http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
 		"http://www.w3.org/2001/XMLSchema#normalizedString"
-		"http://protege.stanford.edu/plugins/owl/protege#FROM"
+		"http://www.w3.org/1999/02/22-rdf-syntax-ns#value"
 		"http://www.w3.org/2001/XMLSchema#nonPositiveInteger"
 		"http://www.w3.org/2002/07/owl#someValuesFrom"
 		"http://protege.stanford.edu/plugins/owl/protege#classificationStatus"
 		"http://protege.stanford.edu/plugins/owl/protege#inferredSuperclassOf"
-		"http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#List"
+		"http://www.w3.org/2000/01/rdf-schema#subPropertyOf"
 		"http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"
 		"http://www.w3.org/2003/11/swrl#dataRange"
 		"http://www.w3.org/2002/07/owl#AllDifferent"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
 		"http://www.w3.org/2003/11/swrl#Variable"
 		":DIRECT-INSTANCES"
-		"http://www.w3.org/2002/07/owl#unionOf"
 		"http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION"
+		"http://www.w3.org/2002/07/owl#unionOf"
 		":SLOT"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#predicate"
 		"http://www.w3.org/2002/07/owl#minCardinality"
@@ -5753,6 +5918,7 @@
 		"http://www.w3.org/2001/XMLSchema#NCName"
 		"http://www.w3.org/2002/07/owl#Class"
 		"http://www.w3.org/2001/XMLSchema#ID"
+		"http://www.w3.org/2003/11/swrlb#maxArgs"
 		"http://www.w3.org/2002/07/owl#imports"
 		"http://www.w3.org/2000/01/rdf-schema#member"
 		"http://www.w3.org/2002/07/owl#LogicalClass"
@@ -5769,6 +5935,7 @@
 		"http://www.w3.org/2002/07/owl#SomeValuesFromRestriction"
 		":SLOT-VALUE-TYPE"
 		"http://www.w3.org/2002/07/owl#HasValueRestriction"
+		"http://www.w3.org/2003/11/swrlb#minArgs"
 		"http://www.w3.org/2001/XMLSchema#duration"
 		"http://www.w3.org/2001/XMLSchema#positiveInteger"
 		"http://www.w3.org/2002/07/owl#oneOf"
@@ -5780,6 +5947,7 @@
 		"http://www.w3.org/2001/XMLSchema#base64Binary"
 		"http://www.w3.org/2001/XMLSchema#short"
 		"http://www.w3.org/2002/07/owl#maxCardinality"
+		"http://www.w3.org/2003/11/swrlb#args"
 		"http://protege.stanford.edu/plugins/owl/protege#PAL-DESCRIPTION"
 		"http://www.w3.org/2002/07/owl#AllValuesFromRestriction"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#subject"
@@ -5801,7 +5969,6 @@
 		"http://www.w3.org/2001/XMLSchema#float"
 		":NUMERIC-MINIMUM"
 		"http://www.w3.org/1999/02/22-rdf-syntax-ns#rest"
-		"http://protege.stanford.edu/plugins/owl/protege#TO"
 		"http://www.w3.org/2002/07/owl#backwardCompatibleWith"
 		":RELATION"
 		"http://www.w3.org/2000/01/rdf-schema#Datatype"
@@ -5820,8 +5987,8 @@
 		"http://www.w3.org/2003/11/swrl#argument2"
 		"http://www.w3.org/2003/11/swrl#argument1"
 		":FACET"
-		":SLOT-VALUES"
 		"http://www.w3.org/2002/07/owl#intersectionOf"
+		":SLOT-VALUES"
 		"http://www.w3.org/2002/07/owl#Nothing"
 		"http://www.w3.org/2002/07/owl#hasValue")
 	(journaling_enabled FALSE)
@@ -5833,18 +6000,43 @@
 		[Instance_2534]
 		[Instance_86]
 		[Instance_2600]
-		[FORMS_TAB]
 		[Instance_3234]
-		[Instance_43]
-		[CLSES_TAB]
-		[KB_865583_Instance_6]
-		[INSTANCES_TAB]
-		[Instance_45]
-		[KB_865583_Instance_12]
 		[KB_865583_Instance_8]
+		[KB_865583_Instance_10]
+		[family_ProjectKB_Class23]
+		[family_ProjectKB_Class37]
+		[Instance_43]
+		[family_ProjectKB_Class43]
+		[KB_865583_Instance_6]
+		[family_ProjectKB_Class39]
+		[FORMS_TAB]
+		[family_ProjectKB_Class11]
+		[family_ProjectKB_Class9]
+		[family_ProjectKB_Class1]
+		[Instance_45]
+		[family_ProjectKB_Class41]
+		[family_ProjectKB_Class45]
+		[KB_865583_Instance_12]
+		[family_ProjectKB_Class17]
+		[family_ProjectKB_Class13]
+		[family_ProjectKB_Class49]
+		[family_ProjectKB_Class3]
+		[family_ProjectKB_Class35]
 		[KB_865583_Instance_4]
+		[family_ProjectKB_Class33]
+		[family_ProjectKB_Class21]
+		[family_ProjectKB_Class19]
+		[family_ProjectKB_Class27]
+		[family_ProjectKB_Class25]
+		[family_ProjectKB_Class47]
+		[family_ProjectKB_Class31]
+		[CLSES_TAB]
+		[family_ProjectKB_Class5]
+		[INSTANCES_TAB]
+		[family_ProjectKB_Class29]
 		[SLOTS_TAB]
-		[KB_865583_Instance_10]))
+		[family_ProjectKB_Class7]
+		[family_ProjectKB_Class15]))
 
 ([SLOTS_TAB] of  Widget
 
