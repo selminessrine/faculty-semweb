@@ -1,4 +1,4 @@
-; Tue Feb 03 18:00:02 EET 2009
+; Wed Feb 04 16:40:11 EET 2009
 ; 
 ;+ (version "3.4")
 ;+ (build "Build 519")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[family_ProjectKB_Class20815]
-		[family_ProjectKB_Class20816]
-		[family_ProjectKB_Class20817]
-		[family_ProjectKB_Class20818]
-		[family_ProjectKB_Class20819]))
+		[family_ProjectKB_Class10182]
+		[family_ProjectKB_Class10183]
+		[family_ProjectKB_Class10184]
+		[family_ProjectKB_Class10185]
+		[family_ProjectKB_Class10186]))
 
 ([CLSES_TAB] of  Widget
 
@@ -37,6 +37,49 @@
 
 ([family_ProjectKB_Class10] of  Property_List
 )
+
+([family_ProjectKB_Class10004] of  Widget
+
+	(is_hidden FALSE)
+	(label "Name")
+	(name ":NAME")
+	(property_list [family_ProjectKB_Class10006])
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([family_ProjectKB_Class10005] of  Widget
+
+	(is_hidden FALSE)
+	(label "Comment")
+	(name "http://www.w3.org/2000/01/rdf-schema#comment")
+	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
+
+([family_ProjectKB_Class10006] of  Property_List
+)
+
+([family_ProjectKB_Class10182] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Class")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class10183] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([family_ProjectKB_Class10184] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([family_ProjectKB_Class10185] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([family_ProjectKB_Class10186] of  String
+
+	(name "http://www.w3.org/2002/07/owl#Thing")
+	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class11] of  Widget
 
@@ -85,31 +128,6 @@
 
 ([family_ProjectKB_Class20] of  Property_List
 )
-
-([family_ProjectKB_Class20815] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Class")
-	(string_value "%3ANAME"))
-
-([family_ProjectKB_Class20816] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([family_ProjectKB_Class20817] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([family_ProjectKB_Class20818] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([family_ProjectKB_Class20819] of  String
-
-	(name "http://www.w3.org/2002/07/owl#Thing")
-	(string_value "%3ANAME"))
 
 ([family_ProjectKB_Class21] of  Widget
 
@@ -298,8 +316,8 @@
 ([family_ProjectKB_Class5963] of  Property_List
 
 	(properties
-		[family_ProjectKB_Class6298]
-		[family_ProjectKB_Class6299]))
+		[family_ProjectKB_Class10004]
+		[family_ProjectKB_Class10005]))
 
 ([family_ProjectKB_Class5965] of  Property_List
 
@@ -409,24 +427,6 @@
 )
 
 ([family_ProjectKB_Class6] of  Property_List
-)
-
-([family_ProjectKB_Class6298] of  Widget
-
-	(is_hidden FALSE)
-	(label "Name")
-	(name ":NAME")
-	(property_list [family_ProjectKB_Class6300])
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([family_ProjectKB_Class6299] of  Widget
-
-	(is_hidden FALSE)
-	(label "Comment")
-	(name "http://www.w3.org/2000/01/rdf-schema#comment")
-	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
-
-([family_ProjectKB_Class6300] of  Property_List
 )
 
 ([family_ProjectKB_Class7] of  Widget
@@ -896,9 +896,6 @@
 	(property_list [KB_140180_Instance_9]))
 
 ([KB_140180_Instance_9] of  Property_List
-)
-
-([KB_157735_Class0] of  Map
 )
 
 ([KB_221055_Instance_10] of  Widget
@@ -3422,6 +3419,9 @@
 	(property_list [KB_713803_Instance_981]))
 
 ([KB_713803_Instance_981] of  Property_List
+)
+
+([KB_714058_Class0] of  Map
 )
 
 ([KB_764103_Instance_545] of  Widget
