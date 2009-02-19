@@ -18,6 +18,7 @@ the rules using Jess.
 If you want to use Jess, see Installation section from here:
 
 http://protege.cim3.net/cgi-bin/wiki.pl?SWRLJessTab
+(This JAR must be copied to the Protege-OWL plugins subdirectory in the Protege installation directory (i.e., the ./plugins/edu.stanford.smi.protegex.owl/ subdirectory of the Protege installation directory).)
 
 >>
 Pellet is accessible through the reasoning menu -> Pellet, or through the API through the reasoning API [1].
