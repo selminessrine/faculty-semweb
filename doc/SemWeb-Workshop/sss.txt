@@ -1,0 +1,84 @@
+---------------------------------------------------------------------------------------------------------------------
+https://mailman.stanford.edu/pipermail/protege-owl/2008-May/007109.html
+>>>>>>>>>>>>>>
+i can not add cardinality on transitive properties:
+for instance: hasSibling
+how can i implement this?
+
+---------------------------------------------------------------------------------------------------------------------
+http://thread.gmane.org/gmane.comp.misc.ontology.protege.owl/26178/focus=26329
+>>>>>>>>>>>>>>
+SWRLJessBridge load failed: could not find jess.Rete - or an error occured on initialization
+SQWRLQueryTab load failed: could not find jess.Rete - or an error occured on initialization
+>>>>>>>>>>>>>>
+The exceptions that you got are harmless. It means that there is no 
+jess.jar in the protege-owl directory, so it won't be able to execute 
+the rules using Jess.
+
+If you want to use Jess, see Installation section from here:
+
+http://protege.cim3.net/cgi-bin/wiki.pl?SWRLJessTab
+(This JAR must be copied to the Protege-OWL plugins subdirectory in the Protege installation directory (i.e., the ./plugins/edu.stanford.smi.protegex.owl/ subdirectory of the Protege installation directory).)
+
+>>
+Pellet is accessible through the reasoning menu -> Pellet, or through the API through the reasoning API [1].
+
+If you want to use Pellet through DIG (not recommended because of the 
+many DIG limitations), then you would have to install it separately.
+
+Pellet has support for SWRL rules, and some limited built-ins. However, 
+you would not be able to use with Pellet the built-in libraries that are 
+available in the SWRL built-in library [2].
+
+[1]: http://protegewiki.stanford.edu/index.php/ProtegeReasonerAPI
+[2]: http://protege.cim3.net/cgi-bin/wiki.pl?SWRLTab
+
+---------------------------------------------------------------------------------------------------------------------
+https://mailman.stanford.edu/pipermail/protege-owl/2008-May/007109.html
+>>>>>>>>>>>>>>
+1) You wrote: "I wonder whether Pellet Reasoner could run all SWRL rules"
+
+What you mean by "all SWRL rules"? I think this reasoner can run all 
+rules that Pellet can run. Pellet hasn't supported protege build-ins 
+yet, so if you use that build-ins you should consider to run rules via 
+SWRLTab API.
+
+2) You wrote: "Would you please tell me how to let Jena reasoner know 
+where SWRL rules writen by me is?(that is , should I write the special 
+file containing SWRL rules ,if in this case,what name and where should 
+the file be? Or, should I put SWRL rules in my source java code?)"
+
+SWRL rules have to be in your OWL model that you bind with Pellet 
+reasoner instance. So, you can put your rules directly in your ontology 
+or create separate owl file with that rules and import it into your owl 
+model. If you want to create swrl rules programmatically, you can use 
+SWRLTab API [1].
+
+3) You wrote: "Your sending me your source java code on the above work 
+will be highly appreciated."
+
+I don't have any special code to run swrl via Pellet. I created owl 
+ontology with SWRL rules in Protege Editor. In my application I create 
+owl model:
+
+JenaOWLModel owlModel = ProtegeOWL.createJenaOWLModelFromURI(uri);
+
+then I bind it to Pellet reasoner instance:
+
+ReasonerManager reasonerManager = ReasonerManager.getInstance();
+ProtegeReasoner reasoner = 
+reasonerManager.createProtegeReasoner(owlModel, 
+ProtegePelletJenaReasoner.class);
+
+and finally, when I invoke reasoner methods, e. g.:
+
+Collection propValues = reasoner.getRelatedIndividuals(indiv, 
+(OWLObjectProperty) prop);
+
+Pellet just use my swrl rules to infer property values.
+
+[1] http://protege.cim3.net/cgi-bin/wiki.pl?SWRLFactoryFAQ
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------
