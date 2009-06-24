@@ -1,0 +1,2884 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY p1 "http://protege.stanford.edu/plugins/owl/protege#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.owl-ontologies.com/unnamed.owl#"
+     xml:base="http://www.owl-ontologies.com/unnamed.owl"
+     xmlns:p1="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Step 2
+
+Add parts and SEP Triples</rdfs:comment>
+        <owl:imports>
+            <owl:Ontology rdf:about="http://protege.stanford.edu/plugins/owl/protege"/>
+        </owl:imports>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Class: http://protege.stanford.edu/plugins/owl/protege#DIRECTED-BINARY-RELATION -->
+
+    <owl:Class rdf:about="&p1;DIRECTED-BINARY-RELATION"/>
+    
+
+
+    <!-- Class: http://protege.stanford.edu/plugins/owl/protege#PAL-CONSTRAINT -->
+
+    <owl:Class rdf:about="&p1;PAL-CONSTRAINT"/>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Adult_value -->
+
+    <owl:Class rdf:about="#Adult_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Age_group"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Age_group -->
+
+    <owl:Class rdf:about="#Age_group">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Child_value"/>
+                    <owl:Class rdf:about="#Elderly_value"/>
+                    <owl:Class rdf:about="#Adult_value"/>
+                    <owl:Class rdf:about="#Infant_value"/>
+                    <owl:Class rdf:about="#Todler_value"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Animal -->
+
+    <owl:Class rdf:about="#Animal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A short list of classes of animals - could be filled out in more detail. 
+
+Disjoint with Plant.
+
+Be sure to make all the primitive kinds of animals disjoint.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Living_thing"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Antivenom_access -->
+
+    <owl:Class rdf:about="#Antivenom_access">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Arm -->
+
+    <owl:Class rdf:about="#Arm">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Body"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Arm_or_part_of_Arm -->
+
+    <owl:Class rdf:about="#Arm_or_part_of_Arm">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Arm"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Arm"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Avoidance_means -->
+
+    <owl:Class rdf:about="#Avoidance_means">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Mosquito_netting"/>
+                    <owl:Class rdf:about="#Physical_separation"/>
+                    <owl:Class rdf:about="#Insecticidal_spraying"/>
+                    <owl:Class rdf:about="#Antivenom_access"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Biped -->
+
+    <owl:Class rdf:about="#Biped">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that has two legs - i.e.
+has_leg = 2
+
+Defined class
+Demonstrates use of cardinality constraint on subproperty.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_leg"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Bird -->
+
+    <owl:Class rdf:about="#Bird">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_limb"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Body -->
+
+    <owl:Class rdf:about="#Body">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Body_or_part_of_body -->
+
+    <owl:Class rdf:about="#Body_or_part_of_body">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Body"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Body"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Body_part -->
+
+    <owl:Class rdf:about="#Body_part">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Body_part_or_part_of_Body_part -->
+
+    <owl:Class rdf:about="#Body_part_or_part_of_Body_part">
+        <rdfs:comment rdf:datatype="&xsd;string">SEP Triples</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Domain_entity"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Body_part"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Body_part"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Bull -->
+
+    <owl:Class rdf:about="#Bull">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Cow"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_sex"/>
+                        <owl:hasValue rdf:resource="#male"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Calf -->
+
+    <owl:Class rdf:about="#Calf">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Cow"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_age_group"/>
+                        <owl:someValuesFrom rdf:resource="#Child_value"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Care_and_attention -->
+
+    <owl:Class rdf:about="#Care_and_attention">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Carnivore -->
+
+    <owl:Class rdf:about="#Carnivore">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that only eats meat.
+
+Defined class</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#eats"/>
+                        <owl:allValuesFrom rdf:resource="#Animal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Carp -->
+
+    <owl:Class rdf:about="#Carp">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Fish"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Carrying_disease -->
+
+    <owl:Class rdf:about="#Carrying_disease">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_type"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Cat -->
+
+    <owl:Class rdf:about="#Cat">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Mammal"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_dangerousness"/>
+                <owl:someValuesFrom rdf:resource="#Dangerousness"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:allValuesFrom rdf:resource="#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:someValuesFrom rdf:resource="#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Child_value -->
+
+    <owl:Class rdf:about="#Child_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Age_group"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Cow -->
+
+    <owl:Class rdf:about="#Cow">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Mammal"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:someValuesFrom rdf:resource="#Leafy_plant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_dangerousness"/>
+                <owl:someValuesFrom rdf:resource="#Safe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class rdf:about="#Leafy_plant"/>
+                            <owl:Class rdf:about="#Grass"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:someValuesFrom rdf:resource="#Grass"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Crocadilian -->
+
+    <owl:Class rdf:about="#Crocadilian">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Reptile"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Dangerous -->
+
+    <owl:Class rdf:about="#Dangerous">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Dangerous_animal -->
+
+    <owl:Class rdf:about="#Dangerous_animal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that has_dangerousness Dangerous
+
+Defined class
+Demonstrates use of value partitions</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_quality"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#has_risk_seriousness"/>
+                                        <owl:someValuesFrom rdf:resource="#Deadly_risk"/>
+                                    </owl:Restriction>
+                                    <owl:Class rdf:about="#Risk"/>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_dangerousness"/>
+                        <owl:someValuesFrom rdf:resource="#Dangerous"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Animal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Dangerousness -->
+
+    <owl:Class rdf:about="#Dangerousness">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Dangerous"/>
+                    <owl:Class rdf:about="#Risky"/>
+                    <owl:Class rdf:about="#Safe"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Deadly_risk -->
+
+    <owl:Class rdf:about="#Deadly_risk">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Disorder -->
+
+    <owl:Class rdf:about="#Disorder">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Domain_entity -->
+
+    <owl:Class rdf:about="#Domain_entity">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The top class defined by the user that really pertains to the &quot;domain&quot; - in this case &quot;Living things&quot;.
+
+It is always a good idea to have your own top class under owl:Thing rather than using owl:Thing directly.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Domestic_cat -->
+
+    <owl:Class rdf:about="#Domestic_cat">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_dangerousness"/>
+                <owl:someValuesFrom rdf:resource="#Safe"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Cat"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Domestic_value -->
+
+    <owl:Class rdf:about="#Domestic_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domestication"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Domestication -->
+
+    <owl:Class rdf:about="#Domestication">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Wild_value"/>
+                    <owl:Class rdf:about="#Domestic_value"/>
+                    <owl:Class rdf:about="#Feral_value"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Elderly_value -->
+
+    <owl:Class rdf:about="#Elderly_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Adult_value"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Feature_of_Hiroshima_ken -->
+
+    <owl:Class rdf:about="#Feature_of_Hiroshima_ken">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_location"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="#is_subregion_of"/>
+                                        <owl:hasValue rdf:resource="#Hiroshima_ken"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_location"/>
+                                <owl:hasValue rdf:resource="#Hiroshima_ken"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Geographical_feature"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Feature_of_japan -->
+
+    <owl:Class rdf:about="#Feature_of_japan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Geographical_feature"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_location"/>
+                                <owl:someValuesFrom rdf:resource="#Regions_of_Japan"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_location"/>
+                                <owl:hasValue rdf:resource="#Japan"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Female_animal -->
+
+    <owl:Class rdf:about="#Female_animal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that has sex female
+
+Defined class
+Demonstrates use of value sets</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_sex"/>
+                        <owl:hasValue rdf:resource="#female"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Animal"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Feral_value -->
+
+    <owl:Class rdf:about="#Feral_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domestication"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Finger -->
+
+    <owl:Class rdf:about="#Finger">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Hand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Finger_or_part_of_Finger -->
+
+    <owl:Class rdf:about="#Finger_or_part_of_Finger">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Body_part"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Finger"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Finger"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Fish -->
+
+    <owl:Class rdf:about="#Fish">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Foot -->
+
+    <owl:Class rdf:about="#Foot">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Leg"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Foot_or_part_of_Foot -->
+
+    <owl:Class rdf:about="#Foot_or_part_of_Foot">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Foot"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Foot"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Geographical_entity -->
+
+    <owl:Class rdf:about="#Geographical_entity">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Geographical_feature -->
+
+    <owl:Class rdf:about="#Geographical_feature">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Geographical_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Geographical_region -->
+
+    <owl:Class rdf:about="#Geographical_region">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Geographical_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Goldfish -->
+
+    <owl:Class rdf:about="#Goldfish">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Carp"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Grass -->
+
+    <owl:Class rdf:about="#Grass">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Plant"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Hand -->
+
+    <owl:Class rdf:about="#Hand">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Arm"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Hand_or_part_of_Hand -->
+
+    <owl:Class rdf:about="#Hand_or_part_of_Hand">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Body_part"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Hand"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Hand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Heiffer -->
+
+    <owl:Class rdf:about="#Heiffer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_sex"/>
+                        <owl:hasValue rdf:resource="#female"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Cow"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Herbivore -->
+
+    <owl:Class rdf:about="#Herbivore">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that only eats plants
+
+Defined class.  
+Demonstrates use of &apos;only&apos; and closure axioms.
+
+Be sure that Cow classifies under Herbivore.  Be sure you know why.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#eats"/>
+                        <owl:allValuesFrom rdf:resource="#Plant"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Infant_value -->
+
+    <owl:Class rdf:about="#Infant_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Child_value"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury -->
+
+    <owl:Class rdf:about="#Injury">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Disorder"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury_risk -->
+
+    <owl:Class rdf:about="#Injury_risk">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury_to_Finger -->
+
+    <owl:Class rdf:about="#Injury_to_Finger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_locus"/>
+                        <owl:someValuesFrom rdf:resource="#Finger_or_part_of_Finger"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury_to_Hand -->
+
+    <owl:Class rdf:about="#Injury_to_Hand">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_locus"/>
+                        <owl:someValuesFrom rdf:resource="#Hand_or_part_of_Hand"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury_to_arm -->
+
+    <owl:Class rdf:about="#Injury_to_arm">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Injury"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_locus"/>
+                        <owl:someValuesFrom rdf:resource="#Arm_or_part_of_Arm"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Injury_to_body -->
+
+    <owl:Class rdf:about="#Injury_to_body">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_locus"/>
+                        <owl:someValuesFrom rdf:resource="#Body_or_part_of_body"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Injury"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Innoculation -->
+
+    <owl:Class rdf:about="#Innoculation">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Insect -->
+
+    <owl:Class rdf:about="#Insect">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Insecticidal_spraying -->
+
+    <owl:Class rdf:about="#Insecticidal_spraying">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Leafy_plant -->
+
+    <owl:Class rdf:about="#Leafy_plant">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Plant"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Leg -->
+
+    <owl:Class rdf:about="#Leg">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Body"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Leg_or_part_of_leg -->
+
+    <owl:Class rdf:about="#Leg_or_part_of_leg">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class rdf:about="#Leg"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Leg"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Limb -->
+
+    <owl:Class rdf:about="#Limb">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Class rdf:about="#Leg"/>
+                            <owl:Class rdf:about="#Arm"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Lion -->
+
+    <owl:Class rdf:about="#Lion">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_dangerousness"/>
+                <owl:someValuesFrom rdf:resource="#Dangerous"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_quality"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_risk_seriousness"/>
+                                <owl:someValuesFrom rdf:resource="#Deadly_risk"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Risk"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_avoidance_means"/>
+                                <owl:someValuesFrom rdf:resource="#Physical_separation"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_risk_type"/>
+                                <owl:someValuesFrom rdf:resource="#Physical_attack"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Cat"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Lioness -->
+
+    <owl:Class rdf:about="#Lioness">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_sex"/>
+                        <owl:hasValue rdf:resource="#female"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Lion"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Living_thing -->
+
+    <owl:Class rdf:about="#Living_thing">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The top notion in the Living Things ontology.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Lizard -->
+
+    <owl:Class rdf:about="#Lizard">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Reptile"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Malaria_mosquito -->
+
+    <owl:Class rdf:about="#Malaria_mosquito">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >The mosquitos that carry Malaria - technically Anopheles mosquitos.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_quality"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_risk_seriousness"/>
+                                <owl:someValuesFrom rdf:resource="#Deadly_risk"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Risk"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_risk_type"/>
+                                <owl:someValuesFrom rdf:resource="#Carrying_disease"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_avoidance_means"/>
+                                <owl:someValuesFrom rdf:resource="#Mosquito_netting"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#has_avoidance_means"/>
+                                <owl:someValuesFrom rdf:resource="#Insecticidal_spraying"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Mosquito"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Male_animal -->
+
+    <owl:Class rdf:about="#Male_animal">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that has sex male
+
+Defined class
+Demonstrates use of value sets</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_sex"/>
+                        <owl:hasValue rdf:resource="#male"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Mammal -->
+
+    <owl:Class rdf:about="#Mammal">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Mosquito -->
+
+    <owl:Class rdf:about="#Mosquito">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Insect"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Mosquito_netting -->
+
+    <owl:Class rdf:about="#Mosquito_netting">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Omnivore -->
+
+    <owl:Class rdf:about="#Omnivore">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that east some animals and some plants.
+
+Note difference in definition with &quot;Herbivore&quot; and &quot;Carnivore&quot;.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#eats"/>
+                        <owl:someValuesFrom rdf:resource="#Plant"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#eats"/>
+                        <owl:someValuesFrom rdf:resource="#Animal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Painful_risk -->
+
+    <owl:Class rdf:about="#Painful_risk">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Person -->
+
+    <owl:Class rdf:about="#Person">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Mammal"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Physical_attack -->
+
+    <owl:Class rdf:about="#Physical_attack">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_type"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Physical_separation -->
+
+    <owl:Class rdf:about="#Physical_separation">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Pig -->
+
+    <owl:Class rdf:about="#Pig">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Mammal"/>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#has_leg"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:someValuesFrom rdf:resource="#Plant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#eats"/>
+                <owl:someValuesFrom rdf:resource="#Animal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Piglet -->
+
+    <owl:Class rdf:about="#Piglet">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Pig"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_age_group"/>
+                        <owl:someValuesFrom rdf:resource="#Child_value"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Plant -->
+
+    <owl:Class rdf:about="#Plant">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >A short list of classes of plants - could be filled out in more detail. 
+
+Disjoint with Animal.
+
+Be sure to make all the primitive kinds of plants disjoint.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Living_thing"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Poisonous_bite -->
+
+    <owl:Class rdf:about="#Poisonous_bite">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Risk_type"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Quadruped -->
+
+    <owl:Class rdf:about="#Quadruped">
+        <rdfs:comment rdf:datatype="&xsd;string"
+            >Animal that has two legs - i.e.
+has_leg = 4
+
+Defined class
+Demonstrates use of cardinality constraint on subproperty.</rdfs:comment>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Animal"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#has_leg"/>
+                        <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:cardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Quality -->
+
+    <owl:Class rdf:about="#Quality">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Regions_of_Japan -->
+
+    <owl:Class rdf:about="#Regions_of_Japan">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="#is_subregion_of"/>
+                        <owl:hasValue rdf:resource="#Japan"/>
+                    </owl:Restriction>
+                    <owl:Class rdf:about="#Geographical_region"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Reptile -->
+
+    <owl:Class rdf:about="#Reptile">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Risk -->
+
+    <owl:Class rdf:about="#Risk">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Quality"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Risk_seriousness -->
+
+    <owl:Class rdf:about="#Risk_seriousness">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Injury_risk"/>
+                    <owl:Class rdf:about="#Deadly_risk"/>
+                    <owl:Class rdf:about="#Painful_risk"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Risk_type -->
+
+    <owl:Class rdf:about="#Risk_type">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#ValuePartition"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Carrying_disease"/>
+                    <owl:Class rdf:about="#Poisonous_bite"/>
+                    <owl:Class rdf:about="#Physical_attack"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Risky -->
+
+    <owl:Class rdf:about="#Risky">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Safe -->
+
+    <owl:Class rdf:about="#Safe">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Sex_value -->
+
+    <owl:Class rdf:about="#Sex_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Value"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <owl:Thing rdf:about="#female"/>
+                    <owl:Thing rdf:about="#male"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Todler_value -->
+
+    <owl:Class rdf:about="#Todler_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Child_value"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Toe -->
+
+    <owl:Class rdf:about="#Toe">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="#is_part_of"/>
+                <owl:someValuesFrom rdf:resource="#Foot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Toe_or_part_of_Toe -->
+
+    <owl:Class rdf:about="#Toe_or_part_of_Toe">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Body_part_or_part_of_Body_part"/>
+        </rdfs:subClassOf>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="#is_part_of"/>
+                                <owl:someValuesFrom rdf:resource="#Toe"/>
+                            </owl:Restriction>
+                            <owl:Class rdf:about="#Toe"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                    <owl:Class rdf:about="#Body_part"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Tree -->
+
+    <owl:Class rdf:about="#Tree">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Plant"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Value -->
+
+    <owl:Class rdf:about="#Value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#ValuePartition -->
+
+    <owl:Class rdf:about="#ValuePartition">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- Class: http://www.owl-ontologies.com/unnamed.owl#Wild_value -->
+
+    <owl:Class rdf:about="#Wild_value">
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="#Domestication"/>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Object property: http://protege.stanford.edu/plugins/owl/protege#FROM -->
+
+    <owl:ObjectProperty rdf:about="&p1;FROM"/>
+    
+
+
+    <!-- Object property: http://protege.stanford.edu/plugins/owl/protege#SLOT-CONSTRAINTS -->
+
+    <owl:ObjectProperty rdf:about="&p1;SLOT-CONSTRAINTS"/>
+    
+
+
+    <!-- Object property: http://protege.stanford.edu/plugins/owl/protege#TO -->
+
+    <owl:ObjectProperty rdf:about="&p1;TO"/>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#eats -->
+
+    <owl:ObjectProperty rdf:about="#eats">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_eaten_by"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Living_thing"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_age_group -->
+
+    <owl:ObjectProperty rdf:about="#has_age_group">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Age_group"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_arm -->
+
+    <owl:ObjectProperty rdf:about="#has_arm">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_arm_of"/>
+        </owl:inverseOf>
+        <rdfs:range>
+            <owl:Class rdf:about="#Arm"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_avoidance_means -->
+
+    <owl:ObjectProperty rdf:about="#has_avoidance_means">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_dangerousness -->
+
+    <owl:ObjectProperty rdf:about="#has_dangerousness">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_domestication -->
+
+    <owl:ObjectProperty rdf:about="#has_domestication">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Domestication"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_leg -->
+
+    <owl:ObjectProperty rdf:about="#has_leg">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_leg_of"/>
+        </owl:inverseOf>
+        <rdfs:range>
+            <owl:Class rdf:about="#Leg"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_limb -->
+
+    <owl:ObjectProperty rdf:about="#has_limb">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_limb_of"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Leg"/>
+                    <owl:Class rdf:about="#Arm"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_location -->
+
+    <owl:ObjectProperty rdf:about="#has_location">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_location_of"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Geographical_feature"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Geographical_region"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_locus -->
+
+    <owl:ObjectProperty rdf:about="#has_locus">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_locus_of"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_parent -->
+
+    <owl:ObjectProperty rdf:about="#has_parent">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_parent_of"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_part -->
+
+    <owl:ObjectProperty rdf:about="#has_part">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_part_of"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Living_thing"/>
+                    <owl:Class rdf:about="#Body_part"/>
+                    <owl:Class rdf:about="#Geographical_entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_quality -->
+
+    <owl:ObjectProperty rdf:about="#has_quality">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_quality_of"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_risk_seriousness -->
+
+    <owl:ObjectProperty rdf:about="#has_risk_seriousness">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_risk_type -->
+
+    <owl:ObjectProperty rdf:about="#has_risk_type">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Class rdf:about="#Risk_type"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_sex -->
+
+    <owl:ObjectProperty rdf:about="#has_sex">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#has_subregion -->
+
+    <owl:ObjectProperty rdf:about="#has_subregion">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_subregion_of"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#inverse_of_has_quality -->
+
+    <owl:ObjectProperty rdf:about="#inverse_of_has_quality"/>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_arm_of -->
+
+    <owl:ObjectProperty rdf:about="#is_arm_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_arm"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_eaten_by -->
+
+    <owl:ObjectProperty rdf:about="#is_eaten_by">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#eats"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_leg_of -->
+
+    <owl:ObjectProperty rdf:about="#is_leg_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_leg"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_limb_of -->
+
+    <owl:ObjectProperty rdf:about="#is_limb_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_limb"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_location_of -->
+
+    <owl:ObjectProperty rdf:about="#is_location_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_location"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_locus_of -->
+
+    <owl:ObjectProperty rdf:about="#is_locus_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_locus"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_owned_by -->
+
+    <owl:ObjectProperty rdf:about="#is_owned_by">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#owns"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_parent_of -->
+
+    <owl:ObjectProperty rdf:about="#is_parent_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_parent"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Animal"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_part_of -->
+
+    <owl:ObjectProperty rdf:about="#is_part_of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_part"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class rdf:about="#Living_thing"/>
+                    <owl:Class rdf:about="#Body_part"/>
+                    <owl:Class rdf:about="#Geographical_entity"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_quality_of -->
+
+    <owl:ObjectProperty rdf:about="#is_quality_of">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_quality"/>
+        </owl:inverseOf>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#is_subregion_of -->
+
+    <owl:ObjectProperty rdf:about="#is_subregion_of">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#has_subregion"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Geographical_region"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Geographical_region"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- Object property: http://www.owl-ontologies.com/unnamed.owl#owns -->
+
+    <owl:ObjectProperty rdf:about="#owns">
+        <owl:inverseOf>
+            <owl:ObjectProperty rdf:about="#is_owned_by"/>
+        </owl:inverseOf>
+        <rdfs:domain>
+            <owl:Class rdf:about="#Person"/>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class rdf:about="#Domain_entity"/>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Data Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Data property: http://protege.stanford.edu/plugins/owl/protege#PAL-DESCRIPTION -->
+
+    <owl:DatatypeProperty rdf:about="&p1;PAL-DESCRIPTION"/>
+    
+
+
+    <!-- Data property: http://protege.stanford.edu/plugins/owl/protege#PAL-NAME -->
+
+    <owl:DatatypeProperty rdf:about="&p1;PAL-NAME"/>
+    
+
+
+    <!-- Data property: http://protege.stanford.edu/plugins/owl/protege#PAL-RANGE -->
+
+    <owl:DatatypeProperty rdf:about="&p1;PAL-RANGE"/>
+    
+
+
+    <!-- Data property: http://protege.stanford.edu/plugins/owl/protege#PAL-STATEMENT -->
+
+    <owl:DatatypeProperty rdf:about="&p1;PAL-STATEMENT"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Hiroshima -->
+
+    <Geographical_region rdf:about="#Hiroshima">
+        <is_subregion_of rdf:resource="#Hiroshima_ken"/>
+        <is_location_of rdf:resource="#Hiroshima_Prince_Hotel"/>
+    </Geographical_region>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Hiroshima_Prince_Hotel -->
+
+    <Geographical_feature rdf:about="#Hiroshima_Prince_Hotel">
+        <has_location rdf:resource="#Hiroshima"/>
+    </Geographical_feature>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Hiroshima_ken -->
+
+    <Geographical_region rdf:about="#Hiroshima_ken">
+        <has_subregion rdf:resource="#Hiroshima"/>
+        <is_subregion_of rdf:resource="#Honshu"/>
+    </Geographical_region>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Honshu -->
+
+    <Geographical_region rdf:about="#Honshu">
+        <has_subregion rdf:resource="#Hiroshima_ken"/>
+        <is_subregion_of rdf:resource="#Japan"/>
+        <is_location_of rdf:resource="#Mt_Fuji"/>
+    </Geographical_region>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Japan -->
+
+    <Geographical_region rdf:about="#Japan">
+        <has_subregion rdf:resource="#Honshu"/>
+    </Geographical_region>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#Mt_Fuji -->
+
+    <Geographical_feature rdf:about="#Mt_Fuji">
+        <has_location rdf:resource="#Honshu"/>
+    </Geographical_feature>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#female -->
+
+    <Sex_value rdf:about="#female"/>
+    
+
+
+    <!-- Individual: http://www.owl-ontologies.com/unnamed.owl#male -->
+
+    <Sex_value rdf:about="#male"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////
+    //
+    //   OWL Axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class rdf:about="#Mammal">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Insect"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Insect">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Mammal"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Leg">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Hand"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Hand">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Leg"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_seriousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Avoidance_means">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Leg">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Arm"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Arm">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Leg"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Toe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Hand"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Hand">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Toe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Mammal">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Bird"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Bird">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Mammal"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Child_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Adult_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Adult_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Child_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Leg">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Finger"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Finger">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Leg"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Poisonous_bite">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Physical_attack"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Physical_attack">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Poisonous_bite"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Person">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cat"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cat">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Person"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Tree">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Grass"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Grass">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Tree"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestication">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_type"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_type">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestication"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Finger">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Hand"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Hand">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Finger"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Insect">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Reptile"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Reptile">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Insect"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Wild_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Feral_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Feral_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Wild_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Finger">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Foot"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Foot">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Finger"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Finger">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Arm"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Arm">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Finger"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cow">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cat"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cat">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cow"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Bird">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Fish"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Fish">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Bird"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Fish">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Insect"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Insect">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Fish"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestication">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_seriousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestication"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Pig">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cow"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cow">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Pig"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Hand">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Foot"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Foot">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Hand"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Finger">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Toe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Toe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Finger"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Fish">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Reptile"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Reptile">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Fish"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Person">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cow"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cow">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Person"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Age_group">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestication"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestication">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Age_group"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Avoidance_means">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Age_group">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_seriousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Age_group"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_type">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_seriousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_type"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_type"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_type">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Injury_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Painful_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Painful_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Injury_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Bird">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Insect"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Insect">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Bird"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Age_group">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Avoidance_means">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Age_group"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Age_group">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Age_group"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Infant_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Todler_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Todler_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Infant_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Poisonous_bite">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Carrying_disease"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Carrying_disease">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Poisonous_bite"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Arm">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Hand"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Hand">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Arm"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Pig">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Cat"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Cat">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Pig"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Arm">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Foot"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Foot">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Arm"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Mammal">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Reptile"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Reptile">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Mammal"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Mammal">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Fish"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Fish">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Mammal"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Wild_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestic_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestic_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Wild_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerous">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Safe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Safe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerous"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_seriousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_seriousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestication">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Avoidance_means">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestication"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Leg">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Foot"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Foot">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Leg"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risky">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Safe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Safe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risky"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerous">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risky"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risky">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerous"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestic_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Feral_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Feral_value">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestic_value"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Injury_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Deadly_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Deadly_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Injury_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Person">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Pig"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Pig">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Person"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Toe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Foot"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Foot">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Toe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Deadly_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Painful_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Painful_risk">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Deadly_risk"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Age_group">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_type"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_type">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Age_group"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Arm">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Toe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Toe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Arm"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Animal">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Plant"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Plant">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Animal"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Risk_type">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Avoidance_means"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Avoidance_means">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Risk_type"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Leg">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Toe"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Toe">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Leg"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Domestication">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Dangerousness"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Dangerousness">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Domestication"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Bird">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Reptile"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Reptile">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Bird"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Carrying_disease">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Physical_attack"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <owl:Class rdf:about="#Physical_attack">
+        <owl:disjointWith>
+            <owl:Class rdf:about="#Carrying_disease"/>
+        </owl:disjointWith>
+    </owl:Class>
+    <rdf:Description rdf:about="#has_leg">
+        <rdfs:subPropertyOf rdf:resource="#has_limb"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#is_limb_of">
+        <rdfs:subPropertyOf rdf:resource="#is_part_of"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#has_arm">
+        <rdfs:subPropertyOf rdf:resource="#has_limb"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#is_arm_of">
+        <rdfs:subPropertyOf rdf:resource="#is_limb_of"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#is_leg_of">
+        <rdfs:subPropertyOf rdf:resource="#is_limb_of"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#has_limb">
+        <rdfs:subPropertyOf rdf:resource="#has_part"/>
+    </rdf:Description>
+</rdf:RDF>
